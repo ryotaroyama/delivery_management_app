@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_235754) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_products_on_customer_id"
+    t.index ["drawing_number"], name: "index_products_on_drawing_number", unique: true
     t.index ["processor_id"], name: "index_products_on_processor_id"
   end
 
