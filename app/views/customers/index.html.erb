@@ -1,2 +1,23 @@
-<h1>Customers#index</h1>
-<p>Find me in app/views/customers/index.html.erb</p>
+<h1>納入先一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">納入先</th>
+      <th scope="col"></th>
+    </th>
+  </thead>
+  <tbody>
+    <% @customers.each.with_index(1) do |customer, i| %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%= customer.name %>
+          <td>
+            <%= link_to "詳細", customer %>
+            <%= link_to "編集", edit_customer_path(customer) %>
+            <%= link_to "削除", customer, method: :delete, data: { confirm: "削除しますか?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
