@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   def create
     binding.pry
     customer = Customer.find_or_create_by!(customer_params)
+    processor = Processor.find_or_create_by!(processor_params)
 
     # product = Product.create!(product_params)
     # redirect_to customer
@@ -36,5 +37,9 @@ class ProductsController < ApplicationController
 
     def customer_params
       params.require(:customer).permit(:name)
+    end
+
+    def processor_params
+      params.require(:processor).permit(:name)
     end
 end
