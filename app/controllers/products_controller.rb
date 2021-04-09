@@ -4,8 +4,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.create!(product_params)
-    redirect_to customer
+    binding.pry
+    customer = Customer.find_or_create_by!(customer_params)
+
+    # product = Product.create!(product_params)
+    # redirect_to customer
   end
 
   def show
@@ -29,5 +32,9 @@ class ProductsController < ApplicationController
 
     def product_params
       params.require(:product).permit(:name, :process, :delivery_date, :drawing_number, :comment)
+    end
+
+    def customer_params
+      params.require(:customer).permit(:name)
     end
 end
