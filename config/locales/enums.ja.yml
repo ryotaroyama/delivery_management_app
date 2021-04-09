@@ -1,0 +1,9 @@
+ja:
+  enums:
+    product:
+      process:
+        painting: '塗装'
+        polishing: '研磨'
+        processing: '加工'
+        alumite: 'アルマイト'
+        others: 'その他'

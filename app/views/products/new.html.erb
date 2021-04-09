@@ -10,7 +10,7 @@
   </div>
   <div>
     <%= form.label :process, "工程" %>
-    <%= form.text_field :process %>
+    <%= form.select :process,Product.processes_i18n.invert %>
   </div>
   <div>
     <%= form.label :delivery_date, "納品希望日" %>

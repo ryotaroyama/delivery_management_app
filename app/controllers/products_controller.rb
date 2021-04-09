@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
     product.update!(product_params)
-    redirect_to customer
+    redirect_to customers_path
   end
 
   def destroy

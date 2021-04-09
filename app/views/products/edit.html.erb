@@ -1,2 +1,34 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<h1>編集</h1>
+<%= form_with model: @product, local: true do |form| %>
+  <div>
+    <%= form.label :customer_name, "納入先" %>
+    <%= form.text_field :customer_name, name: "customer[name]" %>
+  </div>
+  <div>
+    <%= form.label :name, "製品名" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :process, "工程" %>
+    <%= form.text_field :process %>
+  </div>
+  <div>
+    <%= form.label :delivery_date, "納品希望日" %>
+    <%= form.text_field :delivery_date %>
+  </div>
+  <div>
+    <%= form.label :processor_name, "加工先" %>
+    <%= form.text_field :processor_name, name: "processor[name]" %>
+  </div>
+  <div>
+    <%= form.label :drawing_number, "図面番号" %>
+    <%= form.text_field :drawing_number %>
+  </div>
+  <div>
+    <%= form.label :comment, "備考" %>
+    <%= form.text_area :comment %>
+  </div>
+  <div>
+    <%= form.submit "完了" %>
+  </div>
+<% end %>
