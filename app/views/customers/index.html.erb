@@ -1,0 +1,10 @@
+<h1>納入先</h1>
+<% @customers.each do |customer| %>
+  <p>
+    <%= customer.name %>
+    <%= link_to "詳細", customers_path %>
+    <%= link_to "編集", edit_product_path(customer) %>
+    <%= link_to "削除", customers_path, method: :delete, data: { confirm: "削除しますか?" } %>
+  </p>
+<% end %>
+<%= link_to "登録", products_path %>
