@@ -7,8 +7,14 @@ class ProductsController < ApplicationController
     binding.pry
     customer = Customer.find_or_create_by!(customer_params)
     processor = Processor.find_or_create_by!(processor_params)
+    product = Product.new(product_params)
+    product.customer_id = customer.id
+    product.processor_id = processor.id
+    product.save!
 
     # product = Product.create!(product_params)
+    # Product.create!(customer_params)
+
     # redirect_to customer
   end
 
