@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
     product.customer_id = customer.id
     product.processor_id = processor.id
     product.save!
-    redirect_to customer
+    redirect_to customers_path
   end
 
   def show
