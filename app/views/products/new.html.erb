@@ -2,11 +2,11 @@
 <%= form_with model: @product, local: true do |form| %>
   <div>
     <%= form.label :customer_name, "納入先" %>
-    <%= form.text_field :customer_name, name: "customer[name]" %>
+    <%= form.select :customer_name, @customer_names, {include_blank: true}, {class: "flexselect", name: "customer[name]"}  %>
   </div>
   <div>
     <%= form.label :name, "製品名" %>
-    <%= form.text_field :name %>
+    <%= form.select :name, @product_names, {include_blank: true}, {class: "flexselect"}  %>
   </div>
   <div>
     <%= form.label :process, "工程" %>
@@ -18,7 +18,7 @@
   </div>
   <div>
     <%= form.label :processor_name, "加工先" %>
-    <%= form.text_field :processor_name, name: "processor[name]" %>
+    <%= form.select :processor_name, @processor_names, {include_blank: true}, {class: "flexselect", name: "processor[name]"}  %>
   </div>
   <div>
     <%= form.label :drawing_number, "図面番号" %>

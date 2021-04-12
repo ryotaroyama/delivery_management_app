@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   def new
     @product = Product.new
+    @customer_names = Customer.pluck(:name)
+    @processor_names = Processor.pluck(:name)
+    @product_names = Product.pluck(:name)
   end
 
   def create
