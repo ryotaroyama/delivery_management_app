@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   def new
     @product = Product.new
+    @customer_names = Customer.pluck(:name)
+    @processor_names = Processor.pluck(:name)
+    @product_names = Product.pluck(:name)
   end
 
   def create
@@ -24,7 +27,7 @@ class ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
     product.update!(product_params)
-    redirect_to customer
+    redirect_to customers_path
   end
 
   def destroy

@@ -3,11 +3,20 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
+import Rails from '@rails/ujs'
+import Turbolinks from 'turbolinks'
+import * as ActiveStorage from '@rails/activestorage'
+import 'channels'
+import $ from 'jquery'
+import './jquery.flexselect'
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener('turbolinks:load', () => {
+  const selectParams = {
+    allowMismatch: true,
+  }
+  $('select.flexselect').flexselect(selectParams)
+})
