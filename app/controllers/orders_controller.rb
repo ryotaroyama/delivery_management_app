@@ -3,7 +3,10 @@ class OrdersController < ApplicationController
     @customers = Customer.order(id: :asc)
   end
 
-  # def new
+  def new
+    @order = Order.new
+    @customer_names = Customer.pluck(:name)
+  end
   #   @product = Product.new
   #   @customer_names = Customer.pluck(:name)
   #   @processor_names = Processor.pluck(:name)
