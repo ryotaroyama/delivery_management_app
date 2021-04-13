@@ -1,2 +1,10 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<h1>納入先</h1>
+<% @customers.each do |customer| %>
+  <p>
+    <%= customer.name %>
+    <%= link_to "詳細", orders_path %>
+    <%= link_to "編集", edit_order_path(customer) %>
+    <%= link_to "削除", orders_path, method: :delete, data: { confirm: "削除しますか?" } %>
+  </p>
+<% end %>
+<%= link_to "登録", orders_path %>
