@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root "customers#index"
-  resources :customers, only: [:index]
-  resources :products, only: [:show, :new, :create, :edit, :destroy]
+  root "orders#index"
+  resources :orders, only: [:index, :show, :new, :create, :edit, :destroy]
 end
