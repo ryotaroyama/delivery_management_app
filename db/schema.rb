@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_042028) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_customers_on_name", unique: true
   end
 
   create_table "orders", force: :cascade do |t|
@@ -40,26 +41,18 @@ ActiveRecord::Schema.define(version: 2021_04_13_042028) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_processors_on_name", unique: true
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "process", null: false
-    t.date "delivery_date", null: false
     t.string "drawing_number"
-    t.string "comment"
-    t.bigint "customer_id", null: false
-    t.bigint "processor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_products_on_customer_id"
-    t.index ["drawing_number"], name: "index_products_on_drawing_number", unique: true
-    t.index ["processor_id"], name: "index_products_on_processor_id"
+    t.index ["name"], name: "index_products_on_name", unique: true
   end
 
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "processors"
   add_foreign_key "orders", "products"
-  add_foreign_key "products", "customers"
-  add_foreign_key "products", "processors"
 end
