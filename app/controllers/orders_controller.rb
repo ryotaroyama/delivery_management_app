@@ -6,12 +6,10 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @customer_names = Customer.pluck(:name)
+    @processor_names = Processor.pluck(:name)
+    @product_names = Product.pluck(:name)
+    @product_drawing_numbers = Product.pluck(:drawing_number)
   end
-  #   @product = Product.new
-  #   @customer_names = Customer.pluck(:name)
-  #   @processor_names = Processor.pluck(:name)
-  #   @product_names = Product.pluck(:name)
-  # end
 
   # def create
   #   customer = Customer.find_or_create_by!(customer_params)
