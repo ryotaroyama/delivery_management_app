@@ -1,6 +1,6 @@
 ja:
   enums:
-    product:
+    order:
       process:
         painting: '塗装'
         polishing: '研磨'
