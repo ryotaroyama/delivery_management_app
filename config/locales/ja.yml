@@ -7,7 +7,7 @@ ja:
       order: 注文
     attributes:
       product:
-        name: 製品
+        name: 製品名
         drawing_number: 図面番号
       customer:
         name: 納入先

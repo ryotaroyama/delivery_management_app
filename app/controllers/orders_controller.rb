@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
   end
 
   def new
-    binding.pry
     @order = Order.new
     @customer_names = Customer.pluck(:name)
     @processor_names = Processor.pluck(:name)
@@ -13,15 +12,15 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # customer = Customer.find_or_create_by!(customer_params)
-    # processor = Processor.find_or_create_by!(processor_params)
-    # product = Product.find_or_create_by!(product_params)
+    customer = Customer.find_or_create_by!(customer_params)
+    processor = Processor.find_or_create_by!(processor_params)
+    product = Product.find_or_create_by!(product_params)
     # order = Order.new(order_params)
     # order.customer_id = customer.id
     # order.product_id = product.id
     # order.processor_id = processor.id
     # order.save!
-    # redirect_to orders_path
+    redirect_to orders_path
   end
 
   # def show

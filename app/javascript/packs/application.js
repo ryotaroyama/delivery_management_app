@@ -17,6 +17,10 @@ ActiveStorage.start()
 document.addEventListener('turbolinks:load', () => {
   const selectParams = {
     allowMismatch: true,
+    inputNameTransform: function (name) {
+      debugger
+      return name.replace('order[', '').replace('_', '[')
+    },
   }
   $('select.flexselect').flexselect(selectParams)
 })
