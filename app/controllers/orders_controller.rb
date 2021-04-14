@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   end
 
   def new
+    binding.pry
     @order = Order.new
     @customer_names = Customer.pluck(:name)
     @processor_names = Processor.pluck(:name)
@@ -11,15 +12,17 @@ class OrdersController < ApplicationController
     @product_drawing_numbers = Product.pluck(:drawing_number)
   end
 
-  # def create
-  #   customer = Customer.find_or_create_by!(customer_params)
-  #   processor = Processor.find_or_create_by!(processor_params)
-  #   product = Product.new(product_params)
-  #   product.customer_id = customer.id
-  #   product.processor_id = processor.id
-  #   product.save!
-  #   redirect_to customers_path
-  # end
+  def create
+    # customer = Customer.find_or_create_by!(customer_params)
+    # processor = Processor.find_or_create_by!(processor_params)
+    # product = Product.find_or_create_by!(product_params)
+    # order = Order.new(order_params)
+    # order.customer_id = customer.id
+    # order.product_id = product.id
+    # order.processor_id = processor.id
+    # order.save!
+    # redirect_to orders_path
+  end
 
   # def show
   #   # @product = Product.find(params[:id])
@@ -38,17 +41,21 @@ class OrdersController < ApplicationController
   # def destroy
   # end
 
-  # private
+  private
 
-  #   def product_params
-  #     params.require(:product).permit(:name, :process, :delivery_date, :drawing_number, :comment)
-  #   end
+    def customer_params
+      params.require(:customer).permit(:name)
+    end
 
-  #   def customer_params
-  #     params.require(:customer).permit(:name)
-  #   end
+    def processor_params
+      params.require(:processor).permit(:name)
+    end
 
-  #   def processor_params
-  #     params.require(:processor).permit(:name)
-  #   end
+    def product_params
+      params.require(:product).permit(:name, :drawing_number)
+    end
+
+    def order_params
+      params.require(:order).permit(:delivery_date, :process, :drawing_number, :comment)
+    end
 end
