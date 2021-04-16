@@ -330,6 +330,7 @@ import LiquidMetal from 'liquidmetal'
       if (selected && !selected.disabled) {
         this.input.val(selected.name)
         this.setValue(selected.value)
+        // 製品名を選択した時に図面番号が表示されるようにコードを追加
         if (this.input.attr('id') === 'order_name_flexselect') {
           fetch(`/products/search_number?product_name=${selected.value}`)
             .then((response) => response.json())
@@ -337,9 +338,11 @@ import LiquidMetal from 'liquidmetal'
               document.getElementById(`order_drawing_number`).value = data.drawing_number
             })
         }
+
         this.picked = true
       } else if (this.settings.allowMismatch) {
-        this.setValue.val('')
+        // this.setValue.val('')
+        this.setValue('')
       } else {
         this.reset()
       }
