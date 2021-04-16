@@ -24,19 +24,19 @@ document.addEventListener('turbolinks:load', () => {
 
   $('select.flexselect').flexselect(selectParams)
 
-  const orderName = document.getElementById('order_name_flexselect')
+  // const orderName = document.getElementById('order_name_flexselect')
 
-  orderName.addEventListener('change', (e) => {
-    const productName = e.target.value
-    changeDrawingNumber(productName)
-  })
+  // orderName.addEventListener('change', (e) => {
+  //   const productName = e.target.value
+  //   changeDrawingNumber(productName)
+  // })
 
-  const changeDrawingNumber = (productName) => {
-    fetch(`/products/search_number?product_name=${productName}`)
-      .then((response) => response.json())
-      .then((data) => {
-        // (ボックスにしたい処理をかく)
-        // drawingnumber)
-      })
-  }
+  // const changeDrawingNumber = (productName) => {
+  //   fetch(`/products/search_number?product_name=${productName}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // (ボックスにしたい処理をかく)
+  //       // drawingnumber)
+  //     })
+  // }
 })

@@ -330,6 +330,13 @@ import LiquidMetal from 'liquidmetal'
       if (selected && !selected.disabled) {
         this.input.val(selected.name)
         this.setValue(selected.value)
+        if (this.input.attr('id') === 'order_name_flexselect') {
+          fetch(`/products/search_number?product_name=${selected.value}`)
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById(`order_drawing_number`).value = data.drawing_number
+            })
+        }
         this.picked = true
       } else if (this.settings.allowMismatch) {
         this.setValue.val('')
