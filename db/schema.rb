@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_090120) do
   end
 
   create_table "drawing_numbers", force: :cascade do |t|
-    t.string "name"
+    t.integer "name"
     t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -33,8 +33,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_090120) do
 
   create_table "orders", force: :cascade do |t|
     t.date "delivery_date", null: false
-    t.string "process", null: false
-    t.string "drawing_number"
+    t.integer "process", null: false
     t.string "comment"
     t.bigint "customer_id", null: false
     t.bigint "product_id", null: false
@@ -55,7 +54,6 @@ ActiveRecord::Schema.define(version: 2021_04_19_090120) do
 
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
-    t.string "drawing_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_products_on_name", unique: true

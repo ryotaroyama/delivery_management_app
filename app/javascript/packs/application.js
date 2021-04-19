@@ -32,7 +32,6 @@ document.addEventListener('turbolinks:load', () => {
   flatpickr.localize(flatpickr.l10ns.ja)
 
   flatpickr('#date-form', {
-    // スマートフォンでもカレンダーに「flatpickr」を使用
     disableMobile: true,
   })
 })
