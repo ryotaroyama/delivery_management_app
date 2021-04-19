@@ -14,6 +14,12 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+require('bootstrap/dist/js/bootstrap')
+
+require('flatpickr')
+require('flatpickr/dist/l10n/ja')
+require('flatpickr/dist/themes/material_blue.css')
+
 document.addEventListener('turbolinks:load', () => {
   const selectParams = {
     allowMismatch: true,
@@ -30,9 +36,3 @@ document.addEventListener('turbolinks:load', () => {
     disableMobile: true,
   })
 })
-
-require('bootstrap/dist/js/bootstrap')
-
-require('flatpickr')
-require('flatpickr/dist/l10n/ja')
-require('flatpickr/dist/themes/material_blue.css')
