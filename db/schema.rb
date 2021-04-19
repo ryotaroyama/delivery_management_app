@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_04_235754) do
+ActiveRecord::Schema.define(version: 2021_04_13_042028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,29 +19,40 @@ ActiveRecord::Schema.define(version: 2021_04_04_235754) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_customers_on_name", unique: true
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.date "delivery_date", null: false
+    t.string "process", null: false
+    t.string "drawing_number"
+    t.string "comment"
+    t.bigint "customer_id", null: false
+    t.bigint "product_id", null: false
+    t.bigint "processor_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["processor_id"], name: "index_orders_on_processor_id"
+    t.index ["product_id"], name: "index_orders_on_product_id"
   end
 
   create_table "processors", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_processors_on_name", unique: true
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "process", null: false
-    t.date "delivery_date", null: false
     t.string "drawing_number"
-    t.string "comment"
-    t.bigint "customer_id", null: false
-    t.bigint "processor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_products_on_customer_id"
-    t.index ["drawing_number"], name: "index_products_on_drawing_number", unique: true
-    t.index ["processor_id"], name: "index_products_on_processor_id"
+    t.index ["name"], name: "index_products_on_name", unique: true
   end
 
-  add_foreign_key "products", "customers"
-  add_foreign_key "products", "processors"
+  add_foreign_key "orders", "customers"
+  add_foreign_key "orders", "processors"
+  add_foreign_key "orders", "products"
 end

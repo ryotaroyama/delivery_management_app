@@ -1,4 +1,4 @@
 class Customer < ApplicationRecord
-  has_many :products, dependent: :destroy
-  validates :name, presence: true, length: {maximum: 20}
+  has_many :orders, dependent: :destroy
+  validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
 end

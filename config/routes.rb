@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "customers#index"
-  resources :customers, only: [:index]
-  resources :products, only: [:show, :new, :create, :edit, :destroy]
+  root "orders#index"
+  resources :orders, only: [:index, :show, :new, :create, :edit, :destroy]
+  get "/products/search_number", to: "products#search_number"
 end

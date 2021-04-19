@@ -2,14 +2,19 @@ ja:
   activerecord:
     models:
       product: 製品
+      processor: 加工先
+      customer: 納入先
+      order: 注文
     attributes:
       product:
-        name: 製品
-        process: 工程
-        delivery_date: 納品希望日
+        name: 製品名
         drawing_number: 図面番号
-        comment: 備考
       customer:
         name: 納入先
       processor:
         name: 加工先
+      order:
+        delivery_date: 納品希望日
+        process: 工程
+        drawing_number: 図面番号
+        comment: 備考
