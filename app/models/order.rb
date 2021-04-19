@@ -5,7 +5,6 @@ class Order < ApplicationRecord
 
   validates :delivery_date, presence: true
   validates :process, presence: true
-  validates :drawing_number, length: { maximum: 20 }
   validates :comment, length: { maximum: 50 }
 
   enum process: {
