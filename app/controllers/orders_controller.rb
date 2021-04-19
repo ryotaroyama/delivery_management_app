@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
     processor = Processor.find_or_create_by!(processor_params)
 
     drawing_number = params[:order][:drawing_number]
-    product = Product.find_or_create_by(product_params) do |product|
+    product = Product.find_or_create_by!(product_params) do |product|
       product.drawing_number = drawing_number
     end
 

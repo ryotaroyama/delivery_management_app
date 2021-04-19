@@ -23,4 +23,16 @@ document.addEventListener('turbolinks:load', () => {
   }
 
   $('select.flexselect').flexselect(selectParams)
+  flatpickr.localize(flatpickr.l10ns.ja)
+
+  flatpickr('#date-form', {
+    // スマートフォンでもカレンダーに「flatpickr」を使用
+    disableMobile: true,
+  })
 })
+
+require('bootstrap/dist/js/bootstrap')
+
+require('flatpickr')
+require('flatpickr/dist/l10n/ja')
+require('flatpickr/dist/themes/material_blue.css')
