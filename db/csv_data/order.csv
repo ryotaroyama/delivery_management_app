@@ -8,4 +8,4 @@ id,delivery_date,process,comment,customer_id,product_id,processor_id,drawing_num
 7,20200319,4,オデ,1,4,5,7
 8,20200318,3,明日まで,7,8,9,8
 9,20200317,1,今日,2,7,8,9
-10,20200311,2,たまご,9,4,5,10
+10,20200311,2,たまご,9,4,5,7

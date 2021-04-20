@@ -2,7 +2,7 @@
 <% @customers.each do |customer| %>
   <p>
     <%= customer.name %>
-    <%= link_to "詳細", order_path %>
+    <%= link_to "詳細", orders_path %>
     <%= link_to "編集", edit_order_path(customer) %>
     <%= link_to "削除", orders_path, method: :delete, data: { confirm: "削除しますか?" } %>
   </p>
