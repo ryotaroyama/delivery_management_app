@@ -8,17 +8,17 @@ class OrdersController < ApplicationController
     @customer_names = Customer.pluck(:name)
     @processor_names = Processor.pluck(:name)
     @product_names = Product.pluck(:name)
-    @drawing_number_names = DrawingNumber.pluck(:name)
   end
 
-  # def create
-  #   customer = Customer.find_or_create_by!(customer_params)
-  #   processor = Processor.find_or_create_by!(processor_params)
+  def create
+    customer = Customer.find_or_create_by!(customer_params)
+    processor = Processor.find_or_create_by!(processor_params)
+    product = Product.find_or_create_by!(product_params)
 
-  #   drawing_number = params[:order][:drawing_number]
-  #   product = Product.find_or_create_by!(product_params) do |product|
-  #     product.drawing_number = drawing_number
-  #   end
+    drawing_number = params[:order][:drawing_number]
+    # product = Product.find_or_create_by!(product_params) do |product|
+    #   product.drawing_number = drawing_number
+  end
 
   #   unless product.drawing_number == drawing_number
   #     product.update!(drawing_number: drawing_number)
@@ -64,6 +64,6 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:delivery_date, :process, :drawing_number, :comment)
+      params.require(:order).permit(:delivery_date, :process, :comment)
     end
 end
