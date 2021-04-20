@@ -1,7 +1,7 @@
 class CreateDrawingNumbers < ActiveRecord::Migration[6.1]
   def change
     create_table :drawing_numbers do |t|
-      t.integer :name
+      t.string :name
 
       t.timestamps
     end

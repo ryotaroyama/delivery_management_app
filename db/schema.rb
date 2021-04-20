@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_090120) do
   end
 
   create_table "drawing_numbers", force: :cascade do |t|
-    t.integer "name"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_drawing_numbers_on_name", unique: true

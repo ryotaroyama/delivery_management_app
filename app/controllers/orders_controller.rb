@@ -14,11 +14,35 @@ class OrdersController < ApplicationController
     customer = Customer.find_or_create_by!(customer_params)
     processor = Processor.find_or_create_by!(processor_params)
     product = Product.find_or_create_by!(product_params)
+    drawing_number = nil
 
-    drawing_number = params[:order][:drawing_number]
-    # product = Product.find_or_create_by!(product_params) do |product|
-    #   product.drawing_number = drawing_number
+    if drawing_number_params[:name].present?
+      drawing_number = DrawingNumber.find_or_create_by!(drawing_number_params)
+    end
+
+    drawing_number.name = drawing_number
+
+    order = Order.new(order_params)
+    order.drawing_number_id = drawing_number.id
+    binding.pry
+    unless drawing_number.name == drawing_number
+
+      drawing_number.update!(name: drawing_number)
+
+    end
+
+    order.customer_id = customer.id
+    order.product_id = product.id
+    order.processor_id = processor.id
+
+    order.save!
+    redirect_to orders_path
   end
+
+  #
+  # drawing_number = params[:order][:drawing_number]
+  # product = Product.find_or_create_by!(product_params) do |product|
+  #   product.drawing_number = drawing_number
 
   #   unless product.drawing_number == drawing_number
   #     product.update!(drawing_number: drawing_number)
@@ -28,6 +52,7 @@ class OrdersController < ApplicationController
   #   order.customer_id = customer.id
   #   order.product_id = product.id
   #   order.processor_id = processor.id
+  #   order.drawing_number_id = drawing_number.id
   #   order.save!
   #   redirect_to orders_path
   # end
@@ -61,6 +86,10 @@ class OrdersController < ApplicationController
 
     def product_params
       params.require(:product).permit(:name)
+    end
+
+    def drawing_number_params
+      params.require(:drawing_number).permit(:name)
     end
 
     def order_params
