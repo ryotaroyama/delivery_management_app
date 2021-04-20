@@ -7,6 +7,7 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.references :customer, null: false, foreign_key: true
       t.references :product, null: false, foreign_key: true
       t.references :processor, null: false, foreign_key: true
+      t.references :drawing_number, null: false, foreign_key: true
 
       t.timestamps
     end
