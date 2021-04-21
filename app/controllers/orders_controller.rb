@@ -16,30 +16,23 @@ class OrdersController < ApplicationController
     product = Product.find_or_create_by!(product_params)
     drawing_number = nil
 
+    order = Order.new(order_params)
     if drawing_number_params[:name].present?
       drawing_number = DrawingNumber.find_or_create_by!(drawing_number_params)
+      order.drawing_number_id = drawing_number.id
     end
 
-    drawing_number.name = drawing_number
-
-    order = Order.new(order_params)
-    order.drawing_number_id = drawing_number.id
-    binding.pry
-    unless drawing_number.name == drawing_number
-
-      drawing_number.update!(name: drawing_number)
-
+    if drawing_number.nil?
+      order.drawing_number_id = drawing_number
     end
 
     order.customer_id = customer.id
     order.product_id = product.id
     order.processor_id = processor.id
-
     order.save!
     redirect_to orders_path
   end
 
-  #
   # drawing_number = params[:order][:drawing_number]
   # product = Product.find_or_create_by!(product_params) do |product|
   #   product.drawing_number = drawing_number

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_090120) do
+ActiveRecord::Schema.define(version: 2021_04_21_070250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_090120) do
   end
 
   create_table "drawing_numbers", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_drawing_numbers_on_name", unique: true
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_090120) do
     t.bigint "customer_id", null: false
     t.bigint "product_id", null: false
     t.bigint "processor_id", null: false
-    t.bigint "drawing_number_id", null: false
+    t.bigint "drawing_number_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id"

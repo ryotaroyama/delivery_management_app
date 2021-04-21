@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   belongs_to :customer
   belongs_to :processor
   belongs_to :product
-  belongs_to :drawing_number
+  belongs_to :drawing_number, optional: true
 
   validates :delivery_date, presence: true
   validates :process, presence: true
