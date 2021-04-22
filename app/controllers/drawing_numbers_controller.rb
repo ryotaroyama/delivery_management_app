@@ -1,8 +1,8 @@
 class DrawingNumbersController < ApplicationController
   def search_number
-    r = Product.find_by(name:params[:order][:product_name]).id
-    k = Order.(find_by(product_id:r).id).drawing_number_id
-    number = DrawingNumber.find_by(id:k)
-    render json: { name: number.name}
+    product_id = Product.find_by(name: params[:product_name])&.id
+    drawing_number_id = Order.order(id: :DESC).find_by(product_id: product_id)&.drawing_number_id
+    drawing_number_name = DrawingNumber.find_by(id: drawing_number_id)&.name
+    render json: { name: drawing_number_name }
   end
 end

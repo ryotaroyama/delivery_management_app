@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       order.drawing_number_id = drawing_number.id
     end
 
-    order.custome_id = customer.id
+    order.customer_id = customer.id
     order.product_id = product.id
     order.processor_id = processor.id
     order.save!
