@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   def index
+    binding.pry
     @customers = Customer.order(id: :asc)
+    Order.order(delivery_date: :DESC)
   end
 
   def new
