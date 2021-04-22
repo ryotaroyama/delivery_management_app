@@ -331,11 +331,11 @@ import LiquidMetal from 'liquidmetal'
         this.input.val(selected.name)
         this.setValue(selected.value)
         // 製品名を選択した時に図面番号が表示されるようにコードを追加
-        if (this.input.attr('id') === 'order_name_flexselect') {
-          fetch(`/products/search_number?product_name=${selected.value}`)
+        if (this.input.attr('id') === 'order_product_name_flexselect') {
+          fetch(`/drawing_numbers/search_number?product_name=${selected.value}`)
             .then((response) => response.json())
             .then((data) => {
-              document.getElementById(`order_drawing_number`).value = data.drawing_number
+              document.getElementById(`order_drawing_number_name`).value = data.name
             })
         }
 
