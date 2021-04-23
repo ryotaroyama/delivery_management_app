@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    @customers = Customer.order(id: :asc)
+    @orders = Order.joins(:customer).select("orders.id, orders.delivery_date, customers.name as order_customer_name ").order(delivery_date: :asc)
   end
 
   def new
