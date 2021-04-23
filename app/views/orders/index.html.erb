@@ -1,7 +1,7 @@
 <h1>納入先</h1>
 <% @orders.each do |order| %>
   <p>
-    <%= order.order_customer_name %>
+    <%= order.customer_name %>
     <%= link_to "詳細", orders_path %>
     <%= link_to "編集", edit_order_path(order) %>
     <%= link_to "削除", orders_path, method: :delete, data: { confirm: "削除しますか?" } %>
