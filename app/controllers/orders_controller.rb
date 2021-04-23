@@ -1,8 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    binding.pry
-    @customers = Customer.order(id: :asc)
-    Order.order(delivery_date: :DESC)
+    @orders = Order.joins(:customer).select("orders.id, orders.delivery_date, customers.name as order_customer_name ").order(delivery_date: :asc)
   end
 
   def new
