@@ -47,6 +47,10 @@ class OrdersController < ApplicationController
 
   def update
     order = Order.find(params[:id])
+    order.customer_id = Customer.find_or_create_by!(customer_params).id
+    order.product_id = Product.find_or_create_by!(product_params).id
+    order.processor_id = Processor.find_or_create_by!(processor_params).id
+    order.drawing_number_id = DrawingNumber.find_or_create_by!(drawing_number_params).id
     order.update!(order_params)
     redirect_to orders_path
   end
