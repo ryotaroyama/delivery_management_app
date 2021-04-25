@@ -29,9 +29,9 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  # def show
-  #   # @product = Product.find(params[:id])
-  # end
+  def show
+    @order = Order.find(params[:id])
+  end
 
   def edit
     @order = Order.find(params[:id])

@@ -2,9 +2,9 @@
 <% @orders.each do |order| %>
   <p>
     <%= order.customer_name %>
-    <%= link_to "詳細", orders_path %>
+    <%= link_to "詳細", order %>
     <%= link_to "編集", edit_order_path(order) %>
-    <%= link_to "削除", orders_path, method: :delete, data: { confirm: "削除しますか?" } %>
+    <%= link_to "削除", order, method: :delete, data: { confirm: "削除しますか?" } %>
   </p>
 <% end %>
 <%= link_to "登録画面", new_order_path %>
