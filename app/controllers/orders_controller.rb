@@ -31,6 +31,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @customer = @order.customer
+    @product = @order.product
+    @processor = @order.processor
+    @drawing_number = @order.drawing_number
   end
 
   def edit
