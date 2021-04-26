@@ -1,8 +1,8 @@
 <h1>詳細</h1>
 <p>納入先 : <%= @customer.name %></p>
 <p>製品名 : <%= @product.name %></p>
-<p>工程  :<%= Order.processes_i18n[@order.process] %></p>
+<p>工程  : <%= Order.processes_i18n[@order.process] %></p>
 <p>納品希望日 : <%= @order.delivery_date%></p>
-<p>加工先  :<%= @processor.name %></p>
-<p>図面番号  :<%= @drawing_number&.name %></p>
-<p>備考  :<%= @order.comment %></p>
+<p>加工先  : <%= @processor.name %></p>
+<p>図面番号  : <%= @drawing_number&.name %></p>
+<p>備考  : <%= @order.comment %></p>
