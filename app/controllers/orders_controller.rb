@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+
+  before_action :set_order, only: %i[show edit update destroy]
+
   def index
     @orders = Order.joins(:customer).select("orders.id, orders.delivery_date, customers.name as customer_name ").order(delivery_date: :asc)
   end
@@ -30,7 +33,6 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
     @customer = @order.customer
     @product = @order.product
     @processor = @order.processor
@@ -38,7 +40,6 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find(params[:id])
     @customer_names = Customer.pluck(:name)
     @product_names = Product.pluck(:name)
     @processor_names = Processor.pluck(:name)
@@ -50,12 +51,11 @@ class OrdersController < ApplicationController
   end
 
   def update
-    order = Order.find(params[:id])
-    order.customer_id = Customer.find_or_create_by!(customer_params).id
-    order.product_id = Product.find_or_create_by!(product_params).id
-    order.processor_id = Processor.find_or_create_by!(processor_params).id
-    order.drawing_number_id = DrawingNumber.find_or_create_by!(drawing_number_params).id
-    order.update!(order_params)
+    @order.customer_id = Customer.find_or_create_by!(customer_params).id
+    @order.product_id = Product.find_or_create_by!(product_params).id
+    @order.processor_id = Processor.find_or_create_by!(processor_params).id
+    @order.drawing_number_id = DrawingNumber.find_or_create_by!(drawing_number_params).id
+    @order.update!(order_params)
     redirect_to orders_path
   end
 
@@ -63,6 +63,10 @@ class OrdersController < ApplicationController
   # end
 
   private
+
+    def set_order
+      @order = Order.find(params[:id])
+    end
 
     def customer_params
       params.require(:customer).permit(:name)
