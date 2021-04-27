@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
-
-  before_action :set_order, only: %i[show edit update destroy]
+  before_action :set_order, only: %i[show edit update]
+  before_action :set_relations, only: %i[show edit]
 
   def index
-    @orders = Order.joins(:customer).select("orders.id, orders.delivery_date, customers.name as customer_name ").order(delivery_date: :asc)
+    column = "orders.id, orders.delivery_date, orders.comment, customers.name as customer_name, products.name as product_name"
+    @orders = Order.joins(:customer, :product).select(column).order(delivery_date: :asc)
   end
 
   def new
@@ -33,21 +34,12 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @customer = @order.customer
-    @product = @order.product
-    @processor = @order.processor
-    @drawing_number = @order.drawing_number
   end
 
   def edit
     @customer_names = Customer.pluck(:name)
     @product_names = Product.pluck(:name)
     @processor_names = Processor.pluck(:name)
-
-    @customer = @order.customer
-    @product = @order.product
-    @processor = @order.processor
-    @drawing_number = @order.drawing_number
   end
 
   def update
@@ -59,13 +51,17 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  # def destroy
-  # end
-
   private
 
     def set_order
       @order = Order.find(params[:id])
+    end
+
+    def set_relations
+      @customer = @order.customer
+      @product = @order.product
+      @processor = @order.processor
+      @drawing_number = @order.drawing_number
     end
 
     def customer_params

@@ -1,10 +1,15 @@
 <h1>納入先</h1>
 <% @orders.each do |order| %>
   <p>
-    <%= order.customer_name %>
+    <span class="screen"
+      data-order_product_name="<%= order.product_name %>"
+      data-order_delivery_date="<%= order.delivery_date %>"
+      data-order_comment="<%= order.comment %>">
+      <%= order.customer_name %></span>
     <%= link_to "詳細", order %>
     <%= link_to "編集", edit_order_path(order) %>
     <%= link_to "削除", order, method: :delete, data: { confirm: "削除しますか?" } %>
   </p>
 <% end %>
 <%= link_to "登録画面", new_order_path %>
+<%= render 'modal' %>
