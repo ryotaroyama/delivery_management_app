@@ -49,9 +49,10 @@ document.addEventListener('turbolinks:load', () => {
 
   const validateFields = () => {
     return Array.from(errorMessages).reduce(
-      (accumulator, currentValue) => validateField(currentValue) && accumulator,
+      (accumulator, errorElement) => validateField(errorElement) && accumulator,
       true
     )
+    // validateField(errorElement)の結果がtrue false
     // let array = Array.from(errorMessages).map((e) => validateField(e))
     // return !array.includes(false)
 
@@ -73,18 +74,5 @@ document.addEventListener('turbolinks:load', () => {
   errorMessages.forEach((errorElement) => {
     const inputElement = errorElement.closest('div').querySelector('input, textarea')
     inputElement.addEventListener('blur', () => validateField(errorElement))
-  })
-
-  const screens = document.querySelectorAll('.screen')
-  screens.forEach((screen) => {
-    screen.addEventListener('click', (e) => {
-      const orderProduct = document.getElementById('order-product-name')
-      const orderDeliveryDate = document.getElementById('order-delivery-date')
-      const orderComment = document.getElementById('order-comment')
-      const dataset = e.target.dataset
-      orderProduct.textContent = dataset.order_product_name
-      orderDeliveryDate.textContent = dataset.order_delivery_date
-      orderComment.textContent = dataset.order_comment
-    })
   })
 })
