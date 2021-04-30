@@ -19,3 +19,5 @@ ja:
         comment: 備考
       drawing_number:
        name: 図面番号
+      errors:
+        messages:
