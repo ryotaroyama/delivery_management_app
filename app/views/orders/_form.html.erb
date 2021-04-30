@@ -27,7 +27,7 @@
   <div>
     <%= form.label :drawing_number_name, "図面番号" %>
     <%= form.text_field :drawing_number_name, name: "drawing_number[name]", value: @drawing_number&.name  %>
-    <p class="error-message" data-required="false" data-max="20"></p>
+    <p class="error-message" data-max="20"></p>
   </div>
   <div>
     <%= form.label :comment, "備考" %>
