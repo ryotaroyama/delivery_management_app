@@ -11,7 +11,7 @@
     </button>
     <%= link_to "詳細", order %>
     <%= link_to "編集", edit_order_path(order) %>
-    <%= link_to "完了", order %>
+    <%= link_to "終了", order_display_orders_path(order), method: :delete %>
   </p>
 <% end %>
 <%= link_to "登録画面", new_order_path %>

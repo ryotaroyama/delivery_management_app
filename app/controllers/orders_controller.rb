@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 
   def index
     column = "orders.id, orders.delivery_date, orders.comment, customers.name as customer_name, products.name as product_name"
-    @orders = Order.joins(:customer, :product).select(column).order(delivery_date: :asc)
+    @orders = Order.where(display: true).joins(:customer, :product).select(column).order(delivery_date: :asc)
   end
 
   def new

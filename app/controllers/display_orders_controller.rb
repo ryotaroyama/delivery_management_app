@@ -15,5 +15,7 @@ class DisplayOrdersController < ApplicationController
   end
 
   def destroy
+    order = Order.find(params[:order_id])
+    order.update!(display: false)
   end
 end
