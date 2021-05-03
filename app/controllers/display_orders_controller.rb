@@ -1,4 +1,4 @@
-class DisplaysController < ApplicationController
+class DisplayOrdersController < ApplicationController
   def index
   end
 
