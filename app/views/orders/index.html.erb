@@ -3,7 +3,7 @@
   <%= link_to "納品済リスト", orders_path(display: "none") %>
 <% else %>
   <h1>納品済リスト</h1>
-  <%= link_to "戻る", @order %>
+  <%= link_to "戻る", root_path %>
 <% end %>
 <% @orders.each do |order| %>
   <p class="order" data-id="<%= order.id %>">
@@ -20,7 +20,7 @@
     <% if @display %>
       <span class="display">納品済</span>
     <% else %>
-      <span class="display" data-display="visible">未納品</span>
+      <span class="display">未納品</span>
     <% end %>
   </p>
 <% end %>

@@ -4,8 +4,8 @@ document.addEventListener('turbolinks:load', () => {
   displays.forEach((display) => {
     display.addEventListener('click', (e) => {
       const orderId = e.target.closest('.order').dataset.id
+      const method = location.href.indexOf('?display=none') == -1 ? 'DELETE' : 'POST'
 
-      const method = e.target.dataset.display === 'visible' ? 'POST' : 'DELETE'
       fetch(`/orders/${orderId}/display_orders`, {
         method: method,
         headers: {
