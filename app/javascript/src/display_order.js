@@ -4,8 +4,10 @@ document.addEventListener('turbolinks:load', () => {
   displays.forEach((display) => {
     display.addEventListener('click', (e) => {
       const orderId = e.target.closest('.order').dataset.id
+
+      const method = e.target.dataset.display === 'visible' ? 'POST' : 'DELETE'
       fetch(`/orders/${orderId}/display_orders`, {
-        method: 'delete',
+        method: method,
         headers: {
           'Content-Type': 'application/json',
           'X-CSRF-Token': csrfToken,
