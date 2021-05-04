@@ -4,7 +4,9 @@ class OrdersController < ApplicationController
 
   def index
     column = "orders.id, orders.delivery_date, orders.comment, customers.name as customer_name, products.name as product_name"
-    @orders = Order.where(display: true).joins(:customer, :product).select(column).order(delivery_date: :asc)
+    # 表示・非表示の設定
+    @display = params[:display] != "none"
+    @orders = Order.where(display: @display).joins(:customer, :product).select(column).order(delivery_date: :asc)
   end
 
   def new
@@ -15,7 +17,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     customer = Customer.find_or_create_by!(customer_params)
     processor = Processor.find_or_create_by!(processor_params)
     product = Product.find_or_create_by!(product_params)
