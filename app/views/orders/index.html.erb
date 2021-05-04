@@ -1,6 +1,6 @@
 <h1>納入先</h1>
 <% @orders.each do |order| %>
-  <p>
+  <p class="order" data-id="<%= order.id %>">
     <button  data-toggle="modal" data-target="#exampleModal">
       <span class="screen"
         data-order_product_name="<%= order.product_name %>"
@@ -11,7 +11,7 @@
     </button>
     <%= link_to "詳細", order %>
     <%= link_to "編集", edit_order_path(order) %>
-    <%= link_to "終了", order_display_orders_path(order), method: :delete %>
+    <span class="display">終了</span>
   </p>
 <% end %>
 <%= link_to "登録画面", new_order_path %>

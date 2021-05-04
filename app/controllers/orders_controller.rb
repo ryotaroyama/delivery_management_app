@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    binding.pry
     customer = Customer.find_or_create_by!(customer_params)
     processor = Processor.find_or_create_by!(processor_params)
     product = Product.find_or_create_by!(product_params)
