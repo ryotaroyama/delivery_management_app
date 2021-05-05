@@ -1,6 +1,12 @@
-<h1>納入先</h1>
+<% if @display %>
+  <h1>納入先</h1>
+  <%= link_to "納品済リスト", orders_path(display: "none") %>
+<% else %>
+  <h1>納品済リスト</h1>
+  <%= link_to "戻る", root_path %>
+<% end %>
 <% @orders.each do |order| %>
-  <p>
+  <p class="order" data-id="<%= order.id %>">
     <button  data-toggle="modal" data-target="#exampleModal">
       <span class="screen"
         data-order_product_name="<%= order.product_name %>"
@@ -11,8 +17,14 @@
     </button>
     <%= link_to "詳細", order %>
     <%= link_to "編集", edit_order_path(order) %>
-    <%= link_to "削除", order, method: :delete, data: { confirm: "削除しますか?" } %>
+    <% if @display %>
+      <span class="display">納品済</span>
+    <% else %>
+      <span class="display">未納品</span>
+    <% end %>
   </p>
 <% end %>
-<%= link_to "登録画面", new_order_path %>
+<% if @display %>
+  <%= link_to "登録画面", new_order_path %>
+<% end %>
 <%= render 'modal' %>
