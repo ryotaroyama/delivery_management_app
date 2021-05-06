@@ -8,13 +8,11 @@ import Turbolinks from 'turbolinks'
 import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
 import $ from 'jquery'
-import './jquery.flexselect'
+import '../src/jquery.flexselect'
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-require('bootstrap/dist/js/bootstrap')
 
 require('flatpickr')
 require('flatpickr/dist/l10n/ja')
