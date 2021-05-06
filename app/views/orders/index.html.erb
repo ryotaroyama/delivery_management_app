@@ -1,6 +1,6 @@
 <% if @display %>
   <h1>納入先</h1>
-  <%= link_to "納品済リスト", orders_path(display: "none") %>
+  <div class="order-list"><%= link_to "納品済リスト", orders_path(display: "none") %></div>
 <% else %>
   <h1>納品済リスト</h1>
   <%= link_to "戻る", root_path %>

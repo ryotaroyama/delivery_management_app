@@ -1,5 +1,6 @@
-/*
- *= require flatpickr
- *= require_tree .
- *= require_self
- */
+@import 'ress/dist/ress.min';
+@import 'flatpickr/dist/flatpickr.min';
+@import './flexselect';
+.order-list {
+  text-align: right;
+}
