@@ -14,11 +14,11 @@
 }
 
 .modal {
+  background-color: rgba(0, 0, 0, 0.8);
   display: none;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 999;
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,10 +28,15 @@
 
 .modal-content {
   width: 200px;
-  height: 200px;
+  height: 250px;
   background-color: #ccc;
-  margin: auto;
-  z-index: 9999;
+  margin: 100px auto;
+  z-index: 10;
+  color: red;
+}
+
+.modal-content span {
+  color: black;
 }
 
 #modal-check {
@@ -39,9 +44,13 @@
 }
 #modal-check:checked + .modal {
   display: block;
-  // padding: 10px;
   box-sizing: border-box;
 }
 label {
   cursor: pointer;
+}
+.delivery-check {
+  text-align: center;
+  font-size: 20px;
+  vertical-align: 50%;
 }
