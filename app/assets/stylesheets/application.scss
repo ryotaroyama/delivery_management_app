@@ -1,6 +1,47 @@
 @import 'ress/dist/ress.min';
 @import 'flatpickr/dist/flatpickr.min';
 @import './flexselect';
+
 .order-list {
   text-align: right;
+}
+
+.box {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(to bottom, #99ccff, #0059b3);
+}
+
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-content {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  margin: auto;
+  z-index: 9999;
+}
+
+#modal-check {
+  display: none;
+}
+#modal-check:checked + .modal {
+  display: block;
+  // padding: 10px;
+  box-sizing: border-box;
+}
+label {
+  cursor: pointer;
 }

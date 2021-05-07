@@ -7,13 +7,16 @@
 <% end %>
 <% @orders.each do |order| %>
   <p class="order" data-id="<%= order.id %>">
-    <button  data-toggle="modal" data-target="#exampleModal">
-      <span class="screen"
-        data-order_product_name="<%= order.product_name %>"
-        data-order_delivery_date="<%= order.delivery_date %>"
-        data-order_comment="<%= order.comment %>">
-        <%= order.customer_name %>
-      </span>
+    <button>
+      <div class="box" id="makeImg"></div>
+      <label for="modal-check">
+        <span class="screen"
+          data-order_product_name="<%= order.product_name %>"
+          data-order_delivery_date="<%= order.delivery_date %>"
+          data-order_comment="<%= order.comment %>">
+          <%= order.customer_name %>
+        </span>
+      </label>
     </button>
     <%= link_to "詳細", order %>
     <%= link_to "編集", edit_order_path(order) %>
