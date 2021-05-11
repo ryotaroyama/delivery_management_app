@@ -34,10 +34,9 @@ body {
   z-index: 10;
   position: fixed;
   top: 0;
-  left: auto;
+  left: 0;
   right: 0;
   bottom: 0;
-  // left: 0; 分からない
 }
 
 .modal-content {
@@ -69,7 +68,6 @@ body {
 .name-label {
   cursor: pointer;
   margin-left: 2.5em;
-  position: relative;
   width: 100%;
 }
 
@@ -112,20 +110,20 @@ body {
 .dropdown-menu li {
   border: 1px solid brown;
   color: black;
-  background-color: #f3cdab;
-  width: 150px;
-  height: 60px;
-  font-size: 30px;
+  background-color: #f7e7d8;
+  font-size: 35px;
 
-  &:hover {
-    background-color: #f3af6b;
+  &:hover a {
+    color: #f1390b;
   }
 
   a {
     text-decoration: none;
     color: black;
-    display: inline-block;
-    margin: 15px 20px;
+    display: block;
+    width: 150px;
+    height: 60px;
+    padding: 15px;
   }
 }
 
@@ -133,10 +131,15 @@ body {
   display: block;
 }
 
-.display {
-  display: inline-block;
-  margin: 15px 20px;
+li .display {
   cursor: pointer;
+  display: block;
+  height: 60px;
+  padding: 15px;
+
+  &:hover {
+    color: #f1390b;
+  }
 }
 
 .registration-link {
