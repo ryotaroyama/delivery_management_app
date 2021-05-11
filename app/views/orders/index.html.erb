@@ -1,28 +1,26 @@
 <% if @display%>
-  <h1>納入先</h1>
+  <p class="title">加工納入先</p>
   <div class="order-list"><%= link_to "納品済リスト", orders_path(display: "none") %></div>
 <% else %>
-  <h1>納品済リスト</h1>
-  <%= link_to "戻る", root_path %>
+  <p class="title">納品済リスト</p>
+  <div class="return-button"><%= link_to "戻る", root_path %></div>
 <% end %>
 <% @orders.each do |order| %>
   <div class="order" data-id="<%= order.id %>">
-    <div class="menu">
-      <div class="menu-title"> ▼</div>
-      <div class="sub-menu">
-        <ul>
-          <li><%= link_to "詳細", order %></li>
-          <li><%= link_to "編集", edit_order_path(order) %></li>
-          <% if @display %>
-            <li><span class="display">納品済</span></li>
-          <% else %>
-            <li><span class="display">未納品</span></li>
-          <% end %>
-        </ul>
-      </div>
+    <div class="dropdown">
+      <div class="dropdown-toggle">▼</div>
+      <ul class="dropdown-menu">
+        <li><%= link_to "詳細", order %></li>
+        <li><%= link_to "編集", edit_order_path(order) %></li>
+        <% if @display %>
+          <li><span class="display">納品済</span></li>
+        <% else %>
+          <li><span class="display">未納品</span></li>
+        <% end %>
+      </ul>
     </div>
-    <label for="modal-check">
-      <span class="screen"
+    <label for="modal-check" class="name-label">
+      <span class="order-name"
           data-order_product_name="<%= order.product_name %>"
           data-order_delivery_date="<%= order.delivery_date %>"
           data-order_comment="<%= order.comment %>">
@@ -32,6 +30,6 @@
   </div>
 <% end %>
 <% if @display %>
-  <%= link_to "登録画面", new_order_path %>
+  <div class="registration-link"><%= link_to "登録画面", new_order_path %></div>
 <% end %>
 <%= render 'modal' %>

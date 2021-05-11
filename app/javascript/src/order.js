@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', () => {
-  const screens = document.querySelectorAll('.screen')
+  const screens = document.querySelectorAll('.order-name')
   screens.forEach((screen) => {
     screen.addEventListener('click', (e) => {
       const orderProduct = document.getElementById('order-product-name')
