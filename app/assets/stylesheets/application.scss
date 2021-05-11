@@ -4,25 +4,40 @@
 
 body {
   background-color: #f3eee9;
+  position: relative;
+}
+
+.header-flexbox {
+  background-color: #772d23;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 100%;
+  position: fixed;
 }
 
 .title {
-  background-color: #772d23;
   color: white;
   font-size: 30px;
-  height: 40px;
-  padding: 5px 10px;
+  margin-left: 20px;
 }
 
 .order-list {
-  background-color: #772d23;
-  color: white;
-  text-align: right;
+  width: 90px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #da796d;
+  line-height: 50px;
+  text-align: center;
+  margin-right: 10px;
 
   a {
     color: white;
     font-size: 20px;
-    margin-right: 10px;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
   }
 }
 
@@ -63,6 +78,7 @@ body {
 .order-name {
   font-family: sans-serif;
   font-size: 20px;
+  display: block;
 }
 
 .name-label {
@@ -75,6 +91,11 @@ body {
   text-align: center;
   font-size: 20px;
   vertical-align: 60%;
+}
+
+.empty {
+  margin: 0px;
+  padding-top: 60px;
 }
 
 .order {
@@ -150,16 +171,6 @@ li .display {
     color: brown;
     cursor: pointer;
     font-size: 20px;
-  }
-}
-
-.return-button {
-  text-align: right;
-  background-color: #772d23;
-
-  a {
-    color: white;
-    margin-right: 10px;
-    font-size: 20px;
+    text-decoration: none;
   }
 }

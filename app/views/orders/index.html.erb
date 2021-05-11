@@ -1,10 +1,15 @@
 <% if @display%>
-  <p class="title">加工納入先</p>
-  <div class="order-list"><%= link_to "納品済リスト", orders_path(display: "none") %></div>
+  <div class="header-flexbox">
+    <div class="title">加工納入先</div>
+    <div class="order-list"><%= link_to "納品済", orders_path(display: "none") %></div>
+  </div>
 <% else %>
-  <p class="title">納品済リスト</p>
-  <div class="return-button"><%= link_to "戻る", root_path %></div>
+  <div class="header-flexbox">
+    <div class="title">納品済</div>
+    <div class="order-list"><%= link_to "戻る", root_path %></div>
+  </div>
 <% end %>
+<div class="empty"></div>
 <% @orders.each do |order| %>
   <div class="order" data-id="<%= order.id %>">
     <div class="dropdown">
