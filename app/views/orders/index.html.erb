@@ -1,15 +1,15 @@
 <% if @display%>
   <div class="header-flexbox">
-    <div class="title">加工納入先</div>
-    <div class="order-list"><%= link_to "納品済", orders_path(display: "none") %></div>
+    <div class="header-title">加工納入先</div>
+    <div class="header-button"><%= link_to "納品済", orders_path(display: "none") %></div>
   </div>
 <% else %>
   <div class="header-flexbox">
     <div class="title">納品済</div>
-    <div class="order-list"><%= link_to "戻る", root_path %></div>
+    <div class="header-button"><%= link_to "戻る", root_path %></div>
   </div>
 <% end %>
-<div class="empty"></div>
+<div class="scrollーblank"></div>
 <% @orders.each do |order| %>
   <div class="order" data-id="<%= order.id %>">
     <div class="dropdown">
@@ -33,8 +33,11 @@
       </span>
     </label>
   </div>
+  <hr class="border-line">
 <% end %>
 <% if @display %>
-  <div class="registration-link"><%= link_to "登録画面", new_order_path %></div>
+  <div class="footer">
+    <div class="registration-link"><%= link_to "新規登録", new_order_path %></div>
+  </div>
 <% end %>
 <%= render 'modal' %>

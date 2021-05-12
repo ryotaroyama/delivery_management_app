@@ -3,8 +3,8 @@
     <%= form.label :customer_name, "納入先" %>
     <%= form.select :customer_name, @customer_names, {include_blank: true, selected: @customer&.name}, {class: "flexselect"}  %>
     <p class="error-message" data-required="true" data-max="20"></p>
-  </div>
-  <div>
+  </div >
+  <div class="product-name">
     <%= form.label :product_name, "製品名" %>
     <%= form.select :product_name, @product_names, {include_blank: true, selected: @product&.name}, {class: "flexselect"}  %>
     <p class="error-message" data-required="true" data-max="20"></p>

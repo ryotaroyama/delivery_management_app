@@ -1,9 +1,19 @@
-<p class="title">詳細</p>
-<p>納入先 : <%= @customer.name %></p>
-<p>製品名 : <%= @product.name %></p>
-<p>工程  : <%= Order.processes_i18n[@order.process] %></p>
-<p>納品希望日 : <%= @order.delivery_date%></p>
-<p>加工先  : <%= @processor.name %></p>
-<p>図面番号  : <%= @drawing_number&.name %></p>
-<p>備考  : <%= @order.comment %></p>
-<%= link_to "戻る", root_path %>
+<div class="header-flexbox">
+  <div class="header-title">詳細</div>
+  <div class="header-button"><%= link_to "戻る", root_path %></div>
+</div>
+<div class="scrollーblank"></div>
+<p class="show-list">納入先 : <%= @customer.name %></p>
+<hr class="border-line">
+<p class="show-list">製品名 : <%= @product.name %></p>
+<hr class="border-line">
+<p class="show-list">工程  : <%= Order.processes_i18n[@order.process] %></p>
+<hr class="border-line">
+<p class="show-list">納品希望日 : <%= @order.delivery_date%></p>
+<hr class="border-line">
+<p class="show-list">加工先  : <%= @processor.name %></p>
+<hr class="border-line">
+<p class="show-list">図面番号  : <%= @drawing_number&.name %></p>
+<hr class="border-line">
+<p class="show-list">備考  : <%= @order.comment %></p>
+<hr class="border-line">

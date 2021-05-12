@@ -17,13 +17,13 @@ body {
   position: fixed;
 }
 
-.title {
+.header-title {
   color: white;
   font-size: 30px;
   margin-left: 20px;
 }
 
-.order-list {
+.header-button {
   width: 90px;
   height: 50px;
   border-radius: 50%;
@@ -93,7 +93,7 @@ body {
   vertical-align: 60%;
 }
 
-.empty {
+.scrollーblank {
   margin: 0px;
   padding-top: 60px;
 }
@@ -102,7 +102,6 @@ body {
   line-height: 30px;
   padding: 20px;
   width: 360px;
-  border-bottom: dashed 3px#77423b;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -163,14 +162,28 @@ li .display {
   }
 }
 
+.border-line {
+  border-top: dashed 3px#77423b;
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .registration-link {
-  text-align: right;
-  margin: 30px 10px;
+  width: 90px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #da796d;
+  line-height: 50px;
+  text-align: center;
+  margin: 10px;
+  float: right;
 
   a {
-    color: brown;
-    cursor: pointer;
+    color: white;
     font-size: 20px;
+    display: block;
     text-decoration: none;
+    cursor: pointer;
   }
 }
