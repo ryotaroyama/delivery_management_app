@@ -14,7 +14,7 @@ ja:
       processor:
         name: 加工先
       order:
-        delivery_date: 納品希望日
+        delivery_date: 希望納期
         process: 工程
         comment: 備考
       drawing_number:

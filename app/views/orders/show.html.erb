@@ -1,19 +1,40 @@
 <div class="header-flexbox">
-  <div class="header-title">詳細</div>
+  <div class="header-title"><%= per_capital_rate("詳細")%></div>
   <div class="header-button"><%= link_to "戻る", root_path %></div>
 </div>
 <div class="scrollーblank"></div>
-<p class="show-list">納入先 : <%= @customer.name %></p>
+<div class="show-list">
+  <div class="item"><%= per_capital_rate("納入先")%></div>
+  <div class="input-value"><%= @customer.name %></div>
+</div>
 <hr class="border-line">
-<p class="show-list">製品名 : <%= @product.name %></p>
+<div class="show-list">
+  <div class="item"><%= per_capital_rate("製品名")%></div>
+  <div class="input-value"><%= @product.name %></div>
+</div>
 <hr class="border-line">
-<p class="show-list">工程  : <%= Order.processes_i18n[@order.process] %></p>
+<div class="show-list">
+  <div class="item"><%= per_capital_rate("工程")%></div>
+  <div class="input-value"><%= Order.processes_i18n[@order.process] %></div>
+</div>
 <hr class="border-line">
-<p class="show-list">納品希望日 : <%= @order.delivery_date%></p>
+<div class="show-list">
+  <div class="item"><%= per_capital_rate("希望納期")%></div>
+  <div class="input-value"><%= @order.delivery_date%></div>
+</div>
 <hr class="border-line">
-<p class="show-list">加工先  : <%= @processor.name %></p>
+<div class="show-list">
+  <div class="item"><%= per_capital_rate("加工先")%></div>
+  <div class="input-value"><%= @processor.name %></div>
+</div>
 <hr class="border-line">
-<p class="show-list">図面番号  : <%= @drawing_number&.name %></p>
+<div class="show-list">
+  <div class="item"><%= per_capital_rate("図面番号")%></div>
+  <div class="input-value"><%= @drawing_number&.name %></div>
+</div>
 <hr class="border-line">
-<p class="show-list">備考  : <%= @order.comment %></p>
+<div class="show-list">
+  <div class="item"><%= per_capital_rate("備考")%></div>
+  <div class="input-value"><%= @order.comment %></div>
+</div>
 <hr class="border-line">
