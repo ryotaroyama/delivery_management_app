@@ -43,7 +43,7 @@ body {
 }
 
 .modal-label {
-  background-color: #d4a5779b;
+  background-color: #5f27219d;
   display: none;
   width: 100%;
   height: 100%;
@@ -56,15 +56,52 @@ body {
 }
 
 .modal-content {
-  width: 250px;
-  height: 250px;
-  background-color: #ccc;
+  width: 280px;
+  height: auto;
+  background-color: #f3eee9;
   margin: 100px auto;
-  color: red;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
 
-  span {
+  div {
     color: black;
   }
+}
+
+.small-screen {
+  display: flex;
+
+  .small-title {
+    margin-top: 30px;
+    width: 90px;
+    text-align: right;
+    margin-right: 30px;
+    flex-shrink: 0;
+    color: #772d23;
+  }
+}
+
+.small-screen .delivery-check {
+  margin-left: auto;
+  margin-right: auto;
+  color: #772d23;
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+#order-product-name {
+  margin-top: 30px;
+}
+
+#order-delivery-date {
+  margin-top: 30px;
+}
+
+#order-comment {
+  margin: 30px auto 30px auto;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 #modal-check {
@@ -79,18 +116,12 @@ body {
 .order-name {
   font-size: 20px;
   display: block;
-  width: 250px;
+  width: 200px;
 }
 
 .name-label {
   cursor: pointer;
   margin-left: 30px;
-}
-
-.delivery-check {
-  text-align: center;
-  font-size: 20px;
-  vertical-align: 60%;
 }
 
 .scrollーblank {
@@ -105,7 +136,9 @@ body {
 .flex {
   display: flex;
   align-items: center;
-  padding: 20px 0px 20px 40px;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .dropdown {
@@ -128,9 +161,9 @@ body {
 }
 
 .dropdown-menu li {
-  border: 1px solid brown;
-  color: black;
-  background-color: #f7e7d8;
+  border: 1px solid #c5956b;
+  color: #772d23;
+  background-color: #f8e1cc;
   font-size: 35px;
 
   &:hover a {
@@ -139,7 +172,7 @@ body {
 
   a {
     text-decoration: none;
-    color: black;
+    color: #772d23;
     display: block;
     width: 150px;
     height: 60px;
@@ -164,7 +197,7 @@ li .display {
 
 .border-line {
   border-top: dashed 3px#77423b;
-  width: 380px;
+  width: 280px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -189,16 +222,18 @@ li .display {
 }
 
 .show-list {
-  font-size: 20px;
-  margin: 20px 40px;
+  font-size: 16px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .item {
   font-weight: bold;
-  color: red;
-  width: 120px;
+  color: #772d23;
+  width: 100px;
   text-align: right;
   padding-right: 30px;
   display: flex;
@@ -206,60 +241,179 @@ li .display {
 }
 
 .input-value {
-  width: 250px;
+  width: 200px;
+  font-size: 18px;
 }
 
 .flexselect {
   border: 1px solid;
-  border-color: red;
-}
-
-#order_process {
-  border: 1px solid;
-  border-color: red;
+  border-color: #c5956b;
+  height: 40px;
+  width: 200px;
+  text-align: center;
 }
 
 #date-form {
   border: 1px solid;
-  border-color: red;
+  border-color: #c5956b;
+  height: 40px;
+  width: 200px;
+  text-align: center;
 }
 
 #order_drawing_number_name {
   border: 1px solid;
-  border-color: red;
+  border-color: #c5956b;
+  height: 40px;
+  width: 200px;
+  text-align: center;
 }
 
 #order_comment {
   border: 1px solid;
-  border-color: red;
+  border-color: #c5956b;
+  height: 80px;
+  text-align: center;
+}
+
+.error-message {
+  font-size: 16px;
+  color: red;
+  width: 230px;
+  text-align: right;
 }
 
 .order-field {
-  font-size: 20px;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    color: #772d23;
+    font-weight: bold;
+    width: 90px;
+    text-align: right;
+    padding-right: 20px;
+  }
 }
 
 .product-name {
-  font-size: 20px;
+  font-size: 17x;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    color: #772d23;
+    font-weight: bold;
+    width: 90px;
+    text-align: right;
+    padding-right: 20px;
+  }
 }
 
 .process {
-  font-size: 20px;
-}
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
+  label {
+    color: #772d23;
+    font-weight: bold;
+    width: 90px;
+    text-align: right;
+    padding-right: 20px;
+  }
+
+  #order_process {
+    border: 1px solid;
+    border-color: #c5956b;
+    height: 40px;
+    width: 200px;
+    text-align-last: center;
+  }
+}
 .delivery-date {
-  font-size: 20px;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    color: #772d23;
+    font-weight: bold;
+    width: 90px;
+    text-align: right;
+    padding-right: 20px;
+  }
 }
 
 .processor-name {
-  font-size: 20px;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    color: #772d23;
+    font-weight: bold;
+    width: 90px;
+    text-align: right;
+    padding-right: 20px;
+  }
 }
 
 .drawing-number {
-  font-size: 20px;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    color: #772d23;
+    font-weight: bold;
+    width: 90px;
+    text-align: right;
+    padding-right: 20px;
+  }
 }
 
 .comment {
-  font-size: 20px;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    color: #772d23;
+    font-weight: bold;
+    width: 90px;
+    text-align: right;
+    padding-right: 20px;
+  }
 }
 
 #submit {
@@ -274,4 +428,13 @@ li .display {
   color: white;
   font-size: 20px;
   cursor: pointer;
+}
+
+.edit {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.blank {
+  width: 100%;
 }
