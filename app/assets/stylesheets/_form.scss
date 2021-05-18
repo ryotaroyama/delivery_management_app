@@ -1,0 +1,66 @@
+.screen {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.flexselect,
+#date-form,
+#order_process,
+#order_drawing_number_name {
+  border: 1px solid;
+  border-color: #c5956b;
+  height: 40px;
+  width: 200px;
+}
+
+#order_comment {
+  border: 1px solid;
+  border-color: #c5956b;
+  height: 80px;
+}
+
+.error-message {
+  font-size: 16px;
+  color: red;
+  width: 230px;
+  text-align: right;
+}
+
+.order-field,
+.product-name,
+.process,
+.delivery-date,
+.processor-name,
+.drawing-number,
+.comment {
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    color: #772d23;
+    font-weight: bold;
+    width: 90px;
+    text-align: right;
+    padding-right: 20px;
+  }
+}
+
+#submit {
+  width: 90px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #da796d;
+  line-height: 50px;
+  text-align: center;
+  margin: 10px;
+  float: right;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+.show-list {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.show-item {
+  font-weight: bold;
+  color: #772d23;
+  width: 100px;
+  text-align: right;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-detail {
+  width: 200px;
+  font-size: 18px;
+}

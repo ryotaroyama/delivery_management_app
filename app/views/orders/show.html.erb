@@ -4,37 +4,37 @@
 </div>
 <div class="scrollーblank"></div>
 <div class="show-list">
-  <div class="item"><%= per_capital_rate("納入先")%></div>
-  <div class="input-value"><%= @customer.name %></div>
+  <div class="show-item"><%= per_capital_rate("納入先")%></div>
+  <div class="order-detail"><%= @customer.name %></div>
 </div>
 <hr class="border-line">
 <div class="show-list">
-  <div class="item"><%= per_capital_rate("製品名")%></div>
-  <div class="input-value"><%= @product.name %></div>
+  <div class="show-item"><%= per_capital_rate("製品名")%></div>
+  <div class="order-detail"><%= @product.name %></div>
 </div>
 <hr class="border-line">
 <div class="show-list">
-  <div class="item"><%= per_capital_rate("工程")%></div>
-  <div class="input-value"><%= Order.processes_i18n[@order.process] %></div>
+  <div class="show-item"><%= per_capital_rate("工程")%></div>
+  <div class="order-detail"><%= Order.processes_i18n[@order.process] %></div>
 </div>
 <hr class="border-line">
 <div class="show-list">
-  <div class="item"><%= per_capital_rate("希望納期")%></div>
-  <div class="input-value"><%= @order.delivery_date%></div>
+  <div class="show-item"><%= per_capital_rate("希望納期")%></div>
+  <div class="order-detail"><%= @order.delivery_date%></div>
 </div>
 <hr class="border-line">
 <div class="show-list">
-  <div class="item"><%= per_capital_rate("加工先")%></div>
-  <div class="input-value"><%= @processor.name %></div>
+  <div class="show-item"><%= per_capital_rate("加工先")%></div>
+  <div class="order-detail"><%= @processor.name %></div>
 </div>
 <hr class="border-line">
 <div class="show-list">
-  <div class="item"><%= per_capital_rate("図面番号")%></div>
-  <div class="input-value"><%= @drawing_number&.name %></div>
+  <div class="show-item"><%= per_capital_rate("図面番号")%></div>
+  <div class="order-detail"><%= @drawing_number&.name %></div>
 </div>
 <hr class="border-line">
 <div class="show-list">
-  <div class="item"><%= per_capital_rate("備考")%></div>
-  <div class="input-value"><%= @order.comment %></div>
+  <div class="show-item"><%= per_capital_rate("備考")%></div>
+  <div class="order-detail"><%= @order.comment %></div>
 </div>
 <hr class="border-line">

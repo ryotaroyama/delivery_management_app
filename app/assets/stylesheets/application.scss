@@ -1,12 +1,20 @@
 @import 'ress/dist/ress.min';
 @import 'flatpickr/dist/flatpickr.min';
 @import './flexselect';
+@import './modal';
+@import './dropdown';
+@import './show';
+@import './form';
+
+/* 全体 */
 
 body {
   background-color: #f3eee9;
   position: relative;
   font-family: sans-serif;
 }
+
+/* ヘッダー */
 
 .header-flexbox {
   background-color: #772d23;
@@ -42,88 +50,6 @@ body {
   }
 }
 
-.modal-label {
-  background-color: #5f27219d;
-  display: none;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.modal-content {
-  width: 280px;
-  height: auto;
-  background-color: #f3eee9;
-  margin: 100px auto;
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-
-  div {
-    color: black;
-  }
-}
-
-.small-screen {
-  display: flex;
-
-  .small-title {
-    margin-top: 30px;
-    width: 90px;
-    text-align: right;
-    margin-right: 30px;
-    flex-shrink: 0;
-    color: #772d23;
-  }
-}
-
-.small-screen .delivery-check {
-  margin-left: auto;
-  margin-right: auto;
-  color: #772d23;
-  margin-top: 10px;
-  font-size: 25px;
-}
-
-#order-product-name {
-  margin-top: 30px;
-}
-
-#order-delivery-date {
-  margin-top: 30px;
-}
-
-#order-comment {
-  margin: 30px auto 30px auto;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-#modal-check {
-  display: none;
-}
-
-#modal-check:checked + .modal-label {
-  display: block;
-  box-sizing: border-box;
-}
-
-.order-name {
-  font-size: 20px;
-  display: block;
-  width: 200px;
-}
-
-.name-label {
-  cursor: pointer;
-  margin-left: 30px;
-}
-
 .scrollーblank {
   margin: 0px;
   padding-top: 60px;
@@ -133,66 +59,12 @@ body {
   line-height: 30px;
 }
 
-.flex {
+.index-flexbox {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-.dropdown {
-  width: 40px;
-  text-align: center;
-  background-color: #f3eee9;
-  color: white;
-}
-
-.dropdown-toggle {
-  width: 40px;
-  background-color: #cf9e98;
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  list-style: none;
-}
-
-.dropdown-menu li {
-  border: 1px solid #c5956b;
-  color: #772d23;
-  background-color: #f8e1cc;
-  font-size: 35px;
-
-  &:hover a {
-    color: #f1390b;
-  }
-
-  a {
-    text-decoration: none;
-    color: #772d23;
-    display: block;
-    width: 150px;
-    height: 60px;
-    padding: 15px;
-  }
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-li .display {
-  cursor: pointer;
-  display: block;
-  height: 60px;
-  padding: 15px;
-
-  &:hover {
-    color: #f1390b;
-  }
 }
 
 .border-line {
@@ -221,220 +93,6 @@ li .display {
   }
 }
 
-.show-list {
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.item {
-  font-weight: bold;
-  color: #772d23;
-  width: 100px;
-  text-align: right;
-  padding-right: 30px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.input-value {
-  width: 200px;
-  font-size: 18px;
-}
-
-.flexselect {
-  border: 1px solid;
-  border-color: #c5956b;
-  height: 40px;
-  width: 200px;
-  text-align: center;
-}
-
-#date-form {
-  border: 1px solid;
-  border-color: #c5956b;
-  height: 40px;
-  width: 200px;
-  text-align: center;
-}
-
-#order_drawing_number_name {
-  border: 1px solid;
-  border-color: #c5956b;
-  height: 40px;
-  width: 200px;
-  text-align: center;
-}
-
-#order_comment {
-  border: 1px solid;
-  border-color: #c5956b;
-  height: 80px;
-  text-align: center;
-}
-
-.error-message {
-  font-size: 16px;
-  color: red;
-  width: 230px;
-  text-align: right;
-}
-
-.order-field {
-  font-size: 17px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  label {
-    color: #772d23;
-    font-weight: bold;
-    width: 90px;
-    text-align: right;
-    padding-right: 20px;
-  }
-}
-
-.product-name {
-  font-size: 17x;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  label {
-    color: #772d23;
-    font-weight: bold;
-    width: 90px;
-    text-align: right;
-    padding-right: 20px;
-  }
-}
-
-.process {
-  font-size: 17px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  label {
-    color: #772d23;
-    font-weight: bold;
-    width: 90px;
-    text-align: right;
-    padding-right: 20px;
-  }
-
-  #order_process {
-    border: 1px solid;
-    border-color: #c5956b;
-    height: 40px;
-    width: 200px;
-    text-align-last: center;
-  }
-}
-.delivery-date {
-  font-size: 17px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  label {
-    color: #772d23;
-    font-weight: bold;
-    width: 90px;
-    text-align: right;
-    padding-right: 20px;
-  }
-}
-
-.processor-name {
-  font-size: 17px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  label {
-    color: #772d23;
-    font-weight: bold;
-    width: 90px;
-    text-align: right;
-    padding-right: 20px;
-  }
-}
-
-.drawing-number {
-  font-size: 17px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  label {
-    color: #772d23;
-    font-weight: bold;
-    width: 90px;
-    text-align: right;
-    padding-right: 20px;
-  }
-}
-
-.comment {
-  font-size: 17px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  label {
-    color: #772d23;
-    font-weight: bold;
-    width: 90px;
-    text-align: right;
-    padding-right: 20px;
-  }
-}
-
-#submit {
-  width: 90px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #da796d;
-  line-height: 50px;
-  text-align: center;
-  margin: 10px;
-  float: right;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.edit {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-}
 .blank {
   width: 100%;
 }
