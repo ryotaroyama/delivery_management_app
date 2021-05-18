@@ -1,5 +1,5 @@
 <%= form_with model: @order, local: true do |form| %>
-  <div class="edit">
+  <div class="screen">
     <div class="order-field">
       <%= form.label :customer_name, "納入先" %>
       <%= form.select :customer_name, @customer_names, {include_blank: true, selected: @customer&.name}, {class: "flexselect"}  %>
