@@ -30,7 +30,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'activerecord-import'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'enum_help'
-
+gem 'devise'
+gem 'omniauth', '~> 1.9'
+gem 'omniauth-line'
+gem 'dotenv-rails'
 
 
 group :development, :test do
