@@ -1,21 +1,19 @@
-<!-- モーダルウィンドウ -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">詳細表示</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>製品名 : <span id="order-product-name"></span></p>
-        <p>納品希望日 : <span id="order-delivery-date"></span></p>
-        <p>備考  : <span id="order-comment"></span></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-      </div>
+<input type="checkbox" id="modal-check">
+<label for="modal-check" class="modal-label">
+  <div class="modal-content">
+    <div class="small-screen">
+      <div class="delivery-check">納期確認</div>
+    </div>
+    <div class="small-screen">
+      <div class="small-title">製品名</div>
+      <div id="order-product-name"></div>
+    </div>
+    <div class="small-screen">
+      <div class="small-title">希望納期</div>
+      <div id="order-delivery-date"></div>
+    </div>
+    <div class="small-screen">
+      <div id="order-comment"></div>
     </div>
   </div>
-</div>
+</label>
