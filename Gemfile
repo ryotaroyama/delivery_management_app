@@ -31,7 +31,6 @@ gem 'activerecord-import'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'enum_help'
 gem 'devise'
-gem 'omniauth', '~> 1.9'
 gem 'omniauth-line'
 gem 'dotenv-rails'
 

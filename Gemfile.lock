@@ -255,7 +255,6 @@ DEPENDENCIES
   enum_help
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  omniauth (~> 1.9)
   omniauth-line
   pg (~> 1.1)
   pry-byebug
