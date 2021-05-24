@@ -36,21 +36,19 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     def basic_action
       @omniauth = request.env["omniauth.auth"]
-      if @omniauth.present?
-        @profile = User.find_or_initialize_by(provider: @omniauth["provider"], uid: @omniauth["uid"])
-        if @profile.email.blank?
-          email = @omniauth["info"]["email"] || "#{@omniauth["uid"]}-#{@omniauth["provider"]}@example.com"
-          @profile = current_user || User.create!(provider: @omniauth["provider"], uid: @omniauth["uid"], email: email, name: @omniauth["info"]["name"],
-                                                  password: Devise.friendly_token[0, 20])
+      if ENV["PRIVATE_UIDS"] == "*" || @omniauth["uid"].in?(ENV["PRIVATE_UIDS"].split(","))
+        @profile = User.find_or_create_by!(uid: @omniauth["uid"]) do |user|
+          user.name = @omniauth["info"]["name"]
         end
-        @profile.set_values(@omniauth)
-        sign_in(:user, @profile)
-      end
-      flash[:notice] = "ログインしました"
-      redirect_to root_path
-    end
+        @profile.provider = @omniauth[:provider]
 
-    def fake_email(uid, provider)
-      "#{auth.uid}-#{auth.provider}@example.com"
+        @profile.set_values(@omniauth)
+
+        sign_in(:user, @profile)
+        redirect_to root_path
+      else
+        flash[:alert] = "ログイン処理を実行できません。システム運営者にお尋ね下さい。"
+        redirect_to new_user_session_path
+      end
     end
 end

@@ -1,2 +1,10 @@
-<h2>ログイン</h2>
-<%= link_to "LINE でログイン", omniauth_authorize_path(:user, :line), method: :post %>
+<div class="login">
+  <div class="card">
+    <div class="card_content">
+      <div class="card_title">ログイン</div>
+      <%= link_to image_tag("btn_login_base.png"), omniauth_authorize_path(:user, :line), method: :post %>
+      <div class="card_alert"><%= flash[:alert]%></div>
+    </div>
+  </div>
+</div>
+</div>
