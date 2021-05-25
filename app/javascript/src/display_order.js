@@ -25,12 +25,4 @@ export const removeOrder = async (e) => {
       alert(error.message)
     }
   }
-
-  // response
-
-  // .then((response) => response.json())
-  // .then((data) => {
-  //   // 対応する注文をフロント側から消去
-  //   document.querySelector(`div[data-id="${data.order_id}"]`).remove()
-  // })
 }
