@@ -1,8 +1,10 @@
-document.addEventListener('turbolinks:load', () => {
+import 'flatpickr'
+import 'flatpickr/dist/l10n/ja'
+import 'flatpickr/dist/themes/material_blue.css'
+
+export const formSettings = () => {
   const errorMessages = document.querySelectorAll('.error-message')
-  if (!errorMessages.length) {
-    return
-  }
+
   // flexselect
   const selectParams = {
     allowMismatch: true,
@@ -75,4 +77,4 @@ document.addEventListener('turbolinks:load', () => {
     const inputElement = errorElement.closest('div').querySelector('input, textarea')
     inputElement.addEventListener('blur', () => validateField(errorElement))
   })
-})
+}

@@ -7,16 +7,30 @@ import Rails from '@rails/ujs'
 import Turbolinks from 'turbolinks'
 import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
-import $ from 'jquery'
+
 import '../src/jquery.flexselect'
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require('flatpickr')
-require('flatpickr/dist/l10n/ja')
-require('flatpickr/dist/themes/material_blue.css')
-require('../src/form')
-require('../src/order')
-require('../src/display_order')
+import { formSettings } from '../src/form'
+import { setDataToModal } from '../src/order'
+import { removeOrder } from '../src/display_order'
+
+document.addEventListener('turbolinks:load', () => {
+  const screens = document.querySelectorAll('.order-name')
+  const displays = document.querySelectorAll('.display')
+
+  screens.forEach((screen) => {
+    screen.addEventListener('click', (e) => setDataToModal(e))
+  })
+
+  displays.forEach((display) => {
+    display.addEventListener('click', (e) => removeOrder(e))
+  })
+
+  if (document.querySelectorAll('.error-message').length) {
+    formSettings()
+  }
+})

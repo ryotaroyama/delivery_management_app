@@ -325,19 +325,28 @@ import LiquidMetal from 'liquidmetal'
       }
     },
 
-    pickSelected: function () {
+    pickSelected: async function () {
       var selected = this.results[this.selectedIndex]
       if (selected && !selected.disabled) {
         this.input.val(selected.name)
         this.setValue(selected.value)
         // 製品名を選択した時に図面番号が表示されるようにコードを追加
-        if (this.input.attr('id') === 'order_product_name_flexselect') {
-          fetch(`/drawing_numbers/search_number?product_name=${selected.value}`)
-            .then((response) => response.json())
-            .then((data) => {
-              document.getElementById(`order_drawing_number_name`).value = data.name
-            })
-        }
+
+        if (this.input.attr('id') === 'order_product_name_flexselect')
+          try {
+            const response = await fetch(`/drawing_numbers/search_number?product_name=${selected.value}`)
+
+            if (!response.ok) throw new Error('処理に失敗しました。リロードしてお試し下さい。')
+
+            const data = await response.json()
+            document.getElementById(`order_drawing_number_name`).value = data.name
+          } catch (error) {
+            if (error.message === 'Failed to fetch') {
+              alert('通信に失敗しました。インターネットの接続状況をご確認下さい。')
+            } else {
+              alert(error.message)
+            }
+          }
 
         this.picked = true
       } else if (this.settings.allowMismatch) {
