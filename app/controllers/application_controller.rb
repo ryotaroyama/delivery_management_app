@@ -1,4 +1,3 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  before_action :authenticate_user!, if: -> { Rails.env.production? }
 end
-# , if: -> { Rails.env.production? }
