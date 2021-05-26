@@ -7,7 +7,7 @@ import Rails from '@rails/ujs'
 import Turbolinks from 'turbolinks'
 import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
-
+import 'flatpickr/dist/themes/material_blue.css'
 import '../src/jquery.flexselect'
 
 Rails.start()
