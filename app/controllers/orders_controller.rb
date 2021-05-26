@@ -18,8 +18,6 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    set_drawing_number if drawing_number_params[:name].present?
-
     set_order_params
     @order.save!
     redirect_to orders_path
@@ -35,7 +33,6 @@ class OrdersController < ApplicationController
 
   def update
     set_order_params
-    set_drawing_number if drawing_number_params[:name].present?
     @order.update!(order_params)
     redirect_to orders_path
   end
@@ -50,9 +47,13 @@ class OrdersController < ApplicationController
     @order.customer_id = customer.id
     @order.product_id = product.id
     @order.processor_id = processor.id
+
+    set_drawing_number
   end
 
   def set_drawing_number
+    return if drawing_number_params[:name].blank?
+
     drawing_number = DrawingNumber.find_or_create_by!(drawing_number_params)
     @order.drawing_number_id = drawing_number.id
   end

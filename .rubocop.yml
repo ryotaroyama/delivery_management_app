@@ -29,3 +29,15 @@ Style/FrozenStringLiteralComment:
 # 1行の最大
 Layout/LineLength:
   Max: 160
+
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/development.rb'
+
+Rails/OutputSafety:
+  Exclude:
+    - 'app/helpers/application_helper.rb'
