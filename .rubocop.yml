@@ -3,7 +3,7 @@ require:
   - rubocop-performance
 
 AllCops:
-  TargetRubyVersion: 2.7.2
+  TargetRubyVersion: 2.7
   NewCops: enable
   Exclude:
     - 'assets/**/*'
@@ -29,14 +29,3 @@ Style/FrozenStringLiteralComment:
 # 1行の最大
 Layout/LineLength:
   Max: 160
-
-# （お好みで設定）文字列はダブルクォートに統一
-# Style/StringLiterals:
-#   EnforcedStyle: double_quotes
-
-# （お好みで設定）%w, %i を使用強制を解除（使用しても使用しなくてもOKにする）
-# Style/WordArray:
-#   Enabled: false
-
-# Style/SymbolArray:
-#   Enabled: false
