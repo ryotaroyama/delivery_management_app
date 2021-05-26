@@ -33,6 +33,7 @@ class OrdersController < ApplicationController
 
   def update
     set_order_params
+    @order.drawing_number_id = nil if drawing_number_params[:name].blank?
     @order.update!(order_params)
     redirect_to orders_path
   end
