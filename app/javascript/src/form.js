@@ -25,7 +25,7 @@ export const formSettings = () => {
   const form = document.querySelector('form')
   const submit = document.getElementById('submit')
 
-  const validateField = (errorElement) => {
+  const validateField = (errorElement, e = undefined) => {
     // セレクタ結合
     const inputElement = errorElement.closest('div').querySelector('input, textarea')
     let errorMessage = ''
@@ -36,7 +36,7 @@ export const formSettings = () => {
 
     if (dataset.required === 'true' && length === 0) {
       if (dataset.date === 'true') {
-        errorMessage += '日付を選択してください'
+        if (e?.type !== 'blur') errorMessage += '日付を選択してください'
       } else {
         errorMessage += '入力されていません'
       }
@@ -74,6 +74,6 @@ export const formSettings = () => {
 
   errorMessages.forEach((errorElement) => {
     const inputElement = errorElement.closest('div').querySelector('input, textarea')
-    inputElement.addEventListener('blur', () => validateField(errorElement))
+    inputElement.addEventListener('blur', (e) => validateField(errorElement, e))
   })
 }
