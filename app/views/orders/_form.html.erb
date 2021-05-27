@@ -1,42 +1,42 @@
 <%= form_with model: @order, local: true do |form| %>
   <div class="screen">
-    <div class="order-field">
-      <%= form.label :customer_name, "納入先" %>
+    <div class="customer-name">
+      <%= form.label :customer_name, per_capital_rate("納入先") %>
       <%= form.select :customer_name, @customer_names, {include_blank: true, selected: @customer&.name}, {class: "flexselect"}  %>
       <span class="blank"></span>
       <span class="error-message" data-required="true" data-max="20"></span>
     </div >
     <div class="product-name">
-      <%= form.label :product_name, "製品名" %>
+      <%= form.label :product_name, per_capital_rate("製品名") %>
       <%= form.select :product_name, @product_names, {include_blank: true, selected: @product&.name}, {class: "flexselect"}  %>
       <span class="blank"></span>
       <span class="error-message" data-required="true" data-max="20"></span>
     </div>
     <div class="process">
-      <%= form.label :process, "工程" %>
+      <%= form.label :process, per_capital_rate("納入先") %>
       <%= form.select :process, Order.processes_i18n.invert %>
     </div>
     <p></p>
     <div class="delivery-date">
-      <%= form.label :delivery_date, "希望納期" %>
+      <%= form.label :delivery_date, per_capital_rate("希望納期") %>
       <%= form.text_field :delivery_date ,id:"date-form" %>
       <span class="blank"></span>
       <span class="error-message" data-required="true" data-date="true"></span>
     </div>
     <div class="processor-name">
-      <%= form.label :processor_name, "加工先" %>
+      <%= form.label :processor_name, per_capital_rate("加工先") %>
       <%= form.select :processor_name, @processor_names, {include_blank: true, selected: @processor&.name}, {class: "flexselect"}  %>
       <span class="blank"></span>
       <span class="error-message" data-required="true" data-max="20"></span>
     </div>
     <div class="drawing-number">
-      <%= form.label :drawing_number_name, "図面番号" %>
+      <%= form.label :drawing_number_name,per_capital_rate("図面番号" ) %>
       <%= form.text_field :drawing_number_name, name: "drawing_number[name]", value: @drawing_number&.name  %>
       <span class="blank"></span>
       <span class="error-message" data-max="20"></span>
     </div>
     <div class="comment">
-      <%= form.label :comment, "備考" %>
+      <%= form.label :comment, per_capital_rate("備考") %>
       <%= form.text_area :comment %>
       <span class="blank"></span>
       <span class="error-message" data-max="10000"></span>

@@ -44,6 +44,7 @@
 
 .modal-detail {
   display: flex;
+  text-align: center;
 
   .modal-item {
     margin-top: 30px;
@@ -55,7 +56,7 @@
   }
 }
 
-.modal-detail .modal-title {
+.modal-detail #order-customer-name {
   margin-left: auto;
   margin-right: auto;
   color: #772d23;
