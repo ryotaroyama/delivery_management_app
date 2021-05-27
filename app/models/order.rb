@@ -6,13 +6,13 @@ class Order < ApplicationRecord
 
   validates :delivery_date, presence: true
   validates :process, presence: true
-  validates :comment, length: { maximum: 10000 }
+  validates :comment, length: { maximum: 10_000 }
 
   enum process: {
     painting: 1,
     polishing: 2,
     processing: 3,
     alumite: 4,
-    others: 5,
+    others: 5
   }
 end

@@ -1,6 +1,5 @@
 import 'flatpickr'
 import 'flatpickr/dist/l10n/ja'
-import 'flatpickr/dist/themes/material_blue.css'
 
 export const formSettings = () => {
   const errorMessages = document.querySelectorAll('.error-message')
