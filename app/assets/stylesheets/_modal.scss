@@ -33,7 +33,7 @@
 }
 
 .modal-content {
-  width: 280px;
+  width: 300px;
   height: auto;
   background-color: #f3eee9;
   margin: 100px auto;
@@ -44,6 +44,7 @@
 
 .modal-detail {
   display: flex;
+  text-align: center;
 
   .modal-item {
     margin-top: 30px;
@@ -55,7 +56,7 @@
   }
 }
 
-.modal-detail .modal-title {
+.modal-detail #order-customer-name {
   margin-left: auto;
   margin-right: auto;
   color: #772d23;
@@ -65,6 +66,7 @@
 
 #order-product-name {
   margin-top: 30px;
+  text-align: left;
 }
 
 #order-delivery-date {
