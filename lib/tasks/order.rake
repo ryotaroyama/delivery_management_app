@@ -11,5 +11,4 @@ namespace :delete do
     Processor.delete_garbage
     DrawingNumber.delete_garbage
   end
-
 end
