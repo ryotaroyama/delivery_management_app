@@ -1,7 +1,5 @@
-# 加工品管理
+# 加工品管理アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+簡易的に加工製品の納期を確認できるアプリです。
 
-Things you may want to cover:
-
+## URL
