@@ -7,9 +7,9 @@
 何かお手伝いできないかと相談したところ、「加工品の納期を管理したい」との事で、このアプリを制作しました。
 
 ## ポートフォリオURL
-https://delivery-management-staging.herokuapp.com/
-<span style="color:red">直接記述</span>
-<font color="Red">*ポートフォリオにはLINEログイン機能はついておりません。</font>
+https://delivery-manegement-app.herokuapp.com/
+
+#### ＜*ポートフォリオにはLINEログイン機能はついておりません。＞
 
 ## 工夫した点
 #### 1、LINEログイン機能を実装
