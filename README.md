@@ -9,7 +9,7 @@
 ## ポートフォリオURL
 https://delivery-manegement-app.herokuapp.com/
 
-#### ＜*ポートフォリオにはLINEログイン機能はついておりません。＞
+#### ＜*ポートフォリオには、LINEログイン機能はついておりません。＞
 
 ## 工夫した点
 #### 1、LINEログイン機能を実装
