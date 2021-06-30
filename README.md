@@ -8,9 +8,11 @@
 
 ## ポートフォリオURL
 https://delivery-management-staging.herokuapp.com/
+<span style="color:red">直接記述</span>
+<font color="Red">*ポートフォリオにはLINEログイン機能はついておりません。</font>
 
 ## 工夫した点
-#### 1、Lineログイン機能を実装
+#### 1、LINEログイン機能を実装
 社長自ら営業、発注を行う事から、現状は社長のみが使用するため、使用頻度の高いLineを使用する事にしました。
 「Lineを使用した機械部品の発注も多い」という事をお聞きし、使用しやすい機能を意識しました。
 
