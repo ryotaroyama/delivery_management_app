@@ -53,16 +53,6 @@ export const formSettings = () => {
       (accumulator, errorElement) => validateField(errorElement) && accumulator,
       true
     )
-    // validateField(errorElement)の結果がtrue false
-    // let array = Array.from(errorMessages).map((e) => validateField(e))
-    // return !array.includes(false)
-
-    // let array = []
-    // errorMessages.forEach((e) => {
-    //   array.push(validateField(e))
-    // })
-
-    // 全てエラーがなければ true, エラーがあれば false を返す
   }
 
   submit.addEventListener('click', (e) => {
