@@ -16,7 +16,7 @@ https://delivery-management-staging.herokuapp.com/
 
 #### 2、工程を列挙型で実装
 加工品の製品は、塗装 → 研磨 → 加工 → アルマイトと工程が決まっているため、列挙型で実装を行いました。
-工程毎に加工会社や加工時間が違うため、それぞれの納期を確認できるようにしました。
+工程毎に加工会社や加工期間が違うため、それぞれの納期を確認できるようにしました。
 
 #### 3、モーダルで簡単に納期を確認できるように実装
 工程によっては、1ヶ月以上加工時間がかかるため、簡単に納期が確認できるようにモーダルで実装を行いました。
@@ -37,9 +37,9 @@ https://delivery-management-staging.herokuapp.com/
 |---|---|---|---|
 |<img width="250" alt="ログイン画面1" src="https://user-images.githubusercontent.com/59526478/123964733-b78f5580-d9ee-11eb-93a5-f114c1862919.png">|<img width="250" alt="ログイン画面2" src="https://user-images.githubusercontent.com/59526478/123964762-c0802700-d9ee-11eb-8c41-141842f7cad9.png">|<img width="250" alt="ログイン画面(LINE)" src="https://user-images.githubusercontent.com/59526478/123963079-13f17580-d9ed-11eb-861a-8c9318cda928.png">|<img width="250" alt="納入先1 " src="https://user-images.githubusercontent.com/59526478/123967892-b57ac600-d9f1-11eb-9d91-d9801fee8f4f.png">|
 
-|簡易納期確認画面<br />（納入先クリック時）|新規登録画面|詳細画面|編集画面|
+|簡易納期確認画面<br />（納入先クリック時）|新規登録画面|詳細画面|編集画面（工程編集時）|
 |---|---|---|---|
-|<img width="250" alt="納入先2" src="https://user-images.githubusercontent.com/59526478/123967899-b6abf300-d9f1-11eb-9344-32e04c226313.png">|<img width="250" alt="新規登録画面2" src="https://user-images.githubusercontent.com/59526478/123965075-0e952a80-d9ef-11eb-8fc3-42aefbf3436f.png">|<img width="250" alt="詳細画面" src="https://user-images.githubusercontent.com/59526478/123964991-fe7d4b00-d9ee-11eb-990a-13d7943712c7.png">|<img width="250" alt="編集画面" src="https://user-images.githubusercontent.com/59526478/123965868-d8a47600-d9ef-11eb-846c-7785bdfbc986.png">|
+|<img width="250" alt="納入先2" src="https://user-images.githubusercontent.com/59526478/123967899-b6abf300-d9f1-11eb-9344-32e04c226313.png">|<img width="250" alt="新規登録画面2" src="https://user-images.githubusercontent.com/59526478/123965075-0e952a80-d9ef-11eb-8fc3-42aefbf3436f.png">|<img width="250" alt="詳細画面" src="https://user-images.githubusercontent.com/59526478/123964991-fe7d4b00-d9ee-11eb-990a-13d7943712c7.png">|<img width="250" alt="編集画面1" src="https://user-images.githubusercontent.com/59526478/123973116-71d68b00-d9f6-11eb-96e9-7622448b762b.png">|
 
 |納品済一覧|
 |---|
