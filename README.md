@@ -33,7 +33,7 @@ https://delivery-management-staging.herokuapp.com/
 ポジティブに向き合うことで、1つ1つの壁を乗り越えていきました。
 
 ## イメージ画像
-<img src="ログイン画面(LINE).png" width="320">
+![Uploading ログイン画面(LINE).png…]()
 
 ## 開発環境・使用技術
 - フロントエンド(HTML, CSS, Sass, JavaScript, jQuery)
