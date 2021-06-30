@@ -41,7 +41,8 @@ https://delivery-management-staging.herokuapp.com/
 <img width="250" alt="詳細画面" src="https://user-images.githubusercontent.com/59526478/123964991-fe7d4b00-d9ee-11eb-990a-13d7943712c7.png">
 <img width="250" alt="新規登録画面1" src="https://user-images.githubusercontent.com/59526478/123965052-09d07680-d9ef-11eb-85a3-38664643d1c3.png">
 <img width="250" alt="新規登録画面2" src="https://user-images.githubusercontent.com/59526478/123965075-0e952a80-d9ef-11eb-8fc3-42aefbf3436f.png">
-
+<img width="250" alt="納品済画面" src="https://user-images.githubusercontent.com/59526478/123965853-d6421c00-d9ef-11eb-956b-bac7a33c6c40.png">
+<img width="250" alt="編集画面" src="https://user-images.githubusercontent.com/59526478/123965868-d8a47600-d9ef-11eb-846c-7785bdfbc986.png">
 ## 開発環境・使用技術
 - フロントエンド(HTML, CSS, Sass, JavaScript, jQuery)
 - バックエンド(Ruby, Ruby on Rails)
