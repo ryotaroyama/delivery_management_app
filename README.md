@@ -51,5 +51,6 @@ https://delivery-management-staging.herokuapp.com/
 - エラーメッセージ機能
 
 ## ER図
+![ER図](https://user-images.githubusercontent.com/59526478/123907811-6f9e0d80-d9b1-11eb-88e1-ab4a5c03de94.png)
 
 ## テーブル設計
