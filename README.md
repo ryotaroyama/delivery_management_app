@@ -1,6 +1,6 @@
 # 【納期管理アプリ】  
 簡易的に注文の納期を確認できるアプリです。
-![PF動画1](https://user-images.githubusercontent.com/59526478/124050941-7df23500-da56-11eb-8d83-5dbdc0bd4f99.gif)
+
 ## 背景
 前職の取引先に営業を行い、受注開発をしました。
 老舗の会社であり、社長自らが営業を行い、機械工具の仲介をしております。
@@ -34,20 +34,19 @@ https://delivery-manegement-app.herokuapp.com/
 必要な機能を調べ、実装していく過程は「使用したことのない技術」と向き合う時間でした。試しに色々とコードを書いてみることで、新しい技術を得る経験を積むことができました。
 ポジティブに向き合うことで、1つ1つの壁を乗り越えていきました。
 
-#### 2、
+#### 3、
+
+## 使用動画
+![PF動画2](https://user-images.githubusercontent.com/59526478/124051390-65364f00-da57-11eb-81b5-c7b0b7b9e40c.gif)
 
 ## イメージ画像
-|LINEログイン画面|LINEログイン画面|LINEアカウントログイン画面|トップページ<br />（加工納入先一覧）|
+|LINEログイン画面|LINEアカウントログイン画面|トップページ<br />（加工納入先一覧）|簡易納期確認画面<br />（納入先クリック時）|
 |---|---|---|---|
-|<img width="250" alt="ログイン画面1" src="https://user-images.githubusercontent.com/59526478/123964733-b78f5580-d9ee-11eb-93a5-f114c1862919.png">|<img width="250" alt="ログイン画面2" src="https://user-images.githubusercontent.com/59526478/123964762-c0802700-d9ee-11eb-8c41-141842f7cad9.png">|<img width="250" alt="ログイン画面(LINE)" src="https://user-images.githubusercontent.com/59526478/123963079-13f17580-d9ed-11eb-861a-8c9318cda928.png">|<img width="250" alt="納入先1 " src="https://user-images.githubusercontent.com/59526478/123967892-b57ac600-d9f1-11eb-9d91-d9801fee8f4f.png">|
+|<img width="250" alt="ログイン画面1" src="https://user-images.githubusercontent.com/59526478/123964733-b78f5580-d9ee-11eb-93a5-f114c1862919.png">|<img width="250" alt="ログイン画面(LINE)" src="https://user-images.githubusercontent.com/59526478/123963079-13f17580-d9ed-11eb-861a-8c9318cda928.png">|<img width="250" alt="納入先1 " src="https://user-images.githubusercontent.com/59526478/123967892-b57ac600-d9f1-11eb-9d91-d9801fee8f4f.png">|<img width="250" alt="納入先2" src="https://user-images.githubusercontent.com/59526478/123967899-b6abf300-d9f1-11eb-9344-32e04c226313.png">|
 
-|簡易納期確認画面<br />（納入先クリック時）|新規登録画面|詳細画面|編集画面<br />（工程編集時）|
+|新規登録画面|詳細画面|編集画面<br />（工程編集時）|納品済一覧|
 |---|---|---|---|
-|<img width="250" alt="納入先2" src="https://user-images.githubusercontent.com/59526478/123967899-b6abf300-d9f1-11eb-9344-32e04c226313.png">|<img width="250" alt="新規登録画面2" src="https://user-images.githubusercontent.com/59526478/123965075-0e952a80-d9ef-11eb-8fc3-42aefbf3436f.png">|<img width="250" alt="詳細画面" src="https://user-images.githubusercontent.com/59526478/123964991-fe7d4b00-d9ee-11eb-990a-13d7943712c7.png">|<img width="250" alt="編集画面1" src="https://user-images.githubusercontent.com/59526478/123973116-71d68b00-d9f6-11eb-96e9-7622448b762b.png">|
-
-|納品済一覧|
-|---|
-|<img width="250" alt="納品済画面" src="https://user-images.githubusercontent.com/59526478/123965853-d6421c00-d9ef-11eb-956b-bac7a33c6c40.png">|
+|<img width="250" alt="新規登録画面2" src="https://user-images.githubusercontent.com/59526478/123965075-0e952a80-d9ef-11eb-8fc3-42aefbf3436f.png">|<img width="250" alt="詳細画面" src="https://user-images.githubusercontent.com/59526478/123964991-fe7d4b00-d9ee-11eb-990a-13d7943712c7.png">|<img width="250" alt="編集画面1" src="https://user-images.githubusercontent.com/59526478/123973116-71d68b00-d9f6-11eb-96e9-7622448b762b.png">|<img width="250" alt="納品済画面" src="https://user-images.githubusercontent.com/59526478/123965853-d6421c00-d9ef-11eb-956b-bac7a33c6c40.png">|
 
 ## 開発環境・使用技術
 - フロントエンド(HTML, CSS, Sass, JavaScript, jQuery)
