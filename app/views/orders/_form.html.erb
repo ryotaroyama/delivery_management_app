@@ -13,7 +13,7 @@
       <span class="error-message" data-required="true" data-max="20"></span>
     </div>
     <div class="process">
-      <%= form.label :process, per_capital_rate("納入先") %>
+      <%= form.label :process, per_capital_rate("工程") %>
       <%= form.select :process, Order.processes_i18n.invert %>
     </div>
     <p></p>
@@ -41,8 +41,8 @@
       <span class="blank"></span>
       <span class="error-message" data-max="10000"></span>
     </div>
-  </div>
-  <div id="submit">
-    <%= form.submit button_value %>
+    <div id="submit">
+      <%= form.submit button_value %>
+    </div>
   </div>
 <% end %>

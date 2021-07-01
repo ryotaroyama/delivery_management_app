@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'activerecord-import'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
+gem 'devise-i18n'
 gem 'dotenv-rails'
 gem 'enum_help'
 gem 'omniauth-line'

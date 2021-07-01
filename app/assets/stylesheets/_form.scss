@@ -2,6 +2,8 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .flexselect,
@@ -26,8 +28,8 @@
 .error-message {
   font-size: 16px;
   color: red;
-  width: 180px;
-  margin-left: 90px;
+  width: 220px;
+  margin-left: 120px;
 }
 
 .customer-name,
@@ -57,13 +59,13 @@
 }
 
 #submit {
-  width: 90px;
+  width: 290px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 10px;
   background-color: #da796d;
   line-height: 50px;
   text-align: center;
-  margin: 10px;
+  margin: 10px 5px;
   float: right;
   color: white;
   font-size: 20px;

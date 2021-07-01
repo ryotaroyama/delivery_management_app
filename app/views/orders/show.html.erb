@@ -1,6 +1,12 @@
 <div class="header-flexbox">
-  <div class="header-title"><%= per_capital_rate("詳細")%></div>
-  <div class="header-button"><%= link_to "戻る", root_path %></div>
+  <div class="header-title">詳細</div>
+  <div class="header-button">
+    <% if @order.display == true %>
+      <%= link_to "戻る", root_path %>
+    <% else %>
+      <%= link_to "戻る", orders_path(display: "none") %>
+    <% end %>
+  </div>
 </div>
 <div class="scrollーblank"></div>
 <div class="show-list">
